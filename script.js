@@ -171,6 +171,7 @@ function magneticButtons() {
  * Gate updates until the steps container is actually visible.
  */
 function storyScroll() {
+  const sentinel = document.getElementById("stepSentinel");
   const steps = Array.from(document.querySelectorAll("#storySteps .step"));
   const bar = document.getElementById("progressBar");
   const kicker = document.getElementById("stageKicker");
@@ -178,51 +179,9 @@ function storyScroll() {
   const body = document.getElementById("stageBody");
   const stage = document.getElementById("storyStage");
 
-  if (!steps.length || !bar || !kicker || !title || !body || !stage) return;
+  if (!sentinel || !steps.length || !bar || !kicker || !title || !body || !stage) return;
 
   let enabled = false;
-
-  // 1) Gate: do not enable updates until the FIRST step is truly visible.
-  const firstStep = steps[0];
-
-  const gate = new IntersectionObserver((entries) => {
-    for (const ent of entries) {
-      if (ent.target === firstStep && ent.isIntersecting) {
-        enabled = true;
-        gate.disconnect();
-
-        // Once enabled, force an initial update to the first step.
-        applyStep(firstStep, 0);
-        io.observe(firstStep);
-        for (let i = 1; i < steps.length; i++) io.observe(steps[i]);
-      }
-    }
-  }, {
-    // "Don't enable" until the first step is well inside the viewport
-    threshold: 0.55,
-    // Push the effective viewport down so we only enable when you can actually see it
-    rootMargin: "0px 0px -20% 0px"
-  });
-
-  // 2) Step observer: updates stage based on the most-visible step.
-  const io = new IntersectionObserver((entries) => {
-    if (!enabled) return;
-
-    let best = null;
-    for (const ent of entries) {
-      if (!ent.isIntersecting) continue;
-      if (!best || ent.intersectionRatio > best.intersectionRatio) best = ent;
-    }
-    if (!best) return;
-
-    const el = best.target;
-    const idx = steps.indexOf(el);
-    applyStep(el, idx);
-  }, {
-    // Make it *not* trigger too early
-    rootMargin: "-10% 0px -35% 0px",
-    threshold: [0.45, 0.6, 0.75]
-  });
 
   function applyStep(el, idx) {
     kicker.textContent = el.dataset.kicker || "Approach";
@@ -238,10 +197,46 @@ function storyScroll() {
     );
   }
 
-  // Start ONLY the gate observer at first.
-  gate.observe(firstStep);
-}
+  // Only start reacting AFTER the sentinel is well into view
+  const gate = new IntersectionObserver((entries) => {
+    const ent = entries[0];
+    if (ent.isIntersecting) {
+      enabled = true;
+      gate.disconnect();
 
+      // Set initial state once we're truly in the section
+      applyStep(steps[0], 0);
+
+      // Start observing steps
+      steps.forEach(s => io.observe(s));
+    }
+  }, {
+    threshold: 1.0,
+    // require sentinel to be fully visible, and not too close to top
+    rootMargin: "-10% 0px -40% 0px"
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    if (!enabled) return;
+
+    let best = null;
+    for (const ent of entries) {
+      if (!ent.isIntersecting) continue;
+      if (!best || ent.intersectionRatio > best.intersectionRatio) best = ent;
+    }
+    if (!best) return;
+
+    const el = best.target;
+    const idx = steps.indexOf(el);
+    applyStep(el, idx);
+  }, {
+    // makes steps "count" only when they're in the readable band
+    rootMargin: "-15% 0px -45% 0px",
+    threshold: [0.55, 0.7, 0.85]
+  });
+
+  gate.observe(sentinel);
+}
 /**
  * Folder behavior:
  * - smooth open/close animation (details height)
