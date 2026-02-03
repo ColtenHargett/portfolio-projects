@@ -171,7 +171,6 @@ function magneticButtons() {
  * Gate updates until the steps container is actually visible.
  */
 function storyScroll() {
-  const stepsWrap = document.getElementById("storySteps");
   const steps = Array.from(document.querySelectorAll("#storySteps .step"));
   const bar = document.getElementById("progressBar");
   const kicker = document.getElementById("stageKicker");
@@ -179,24 +178,35 @@ function storyScroll() {
   const body = document.getElementById("stageBody");
   const stage = document.getElementById("storyStage");
 
-  if (!stepsWrap || !steps.length || !bar || !kicker || !title || !body || !stage) return;
+  if (!steps.length || !bar || !kicker || !title || !body || !stage) return;
 
-  let allowed = false;
+  let enabled = false;
 
-  // First: allow updates only when the steps wrapper is visible
+  // 1) Gate: do not enable updates until the FIRST step is truly visible.
+  const firstStep = steps[0];
+
   const gate = new IntersectionObserver((entries) => {
     for (const ent of entries) {
-      if (ent.target === stepsWrap) {
-        allowed = ent.isIntersecting;
+      if (ent.target === firstStep && ent.isIntersecting) {
+        enabled = true;
+        gate.disconnect();
+
+        // Once enabled, force an initial update to the first step.
+        applyStep(firstStep, 0);
+        io.observe(firstStep);
+        for (let i = 1; i < steps.length; i++) io.observe(steps[i]);
       }
     }
-  }, { threshold: 0.15 });
+  }, {
+    // "Don't enable" until the first step is well inside the viewport
+    threshold: 0.55,
+    // Push the effective viewport down so we only enable when you can actually see it
+    rootMargin: "0px 0px -20% 0px"
+  });
 
-  gate.observe(stepsWrap);
-
-  // Second: update based on the most visible step, but only when allowed === true
+  // 2) Step observer: updates stage based on the most-visible step.
   const io = new IntersectionObserver((entries) => {
-    if (!allowed) return;
+    if (!enabled) return;
 
     let best = null;
     for (const ent of entries) {
@@ -206,22 +216,30 @@ function storyScroll() {
     if (!best) return;
 
     const el = best.target;
+    const idx = steps.indexOf(el);
+    applyStep(el, idx);
+  }, {
+    // Make it *not* trigger too early
+    rootMargin: "-10% 0px -35% 0px",
+    threshold: [0.45, 0.6, 0.75]
+  });
 
+  function applyStep(el, idx) {
     kicker.textContent = el.dataset.kicker || "Approach";
     title.textContent = el.dataset.title || "—";
     body.textContent = el.dataset.body || "—";
 
-    const idx = steps.indexOf(el);
     const pct = Math.round(((idx + 1) / steps.length) * 100);
     bar.style.width = `${pct}%`;
 
     stage.animate(
       [{ transform: "translateY(0px)" }, { transform: "translateY(-2px)" }, { transform: "translateY(0px)" }],
-      { duration: 300, easing: "ease-out" }
+      { duration: 260, easing: "ease-out" }
     );
-  }, { threshold: [0.30, 0.50, 0.70] });
+  }
 
-  steps.forEach(s => io.observe(s));
+  // Start ONLY the gate observer at first.
+  gate.observe(firstStep);
 }
 
 /**
