@@ -7,7 +7,7 @@
   <title>Colten Hargett</title>
   <meta name="description" content="Colten Hargett — programming and AI portfolio." />
 
-  <link rel="stylesheet" href="./styles.css?v=3" />
+  <link rel="stylesheet" href="./styles.css?v=5" />
 </head>
 
 <body>
@@ -21,7 +21,7 @@
   <!-- cursor spotlight (soft, optional) -->
   <div class="spotlight" id="spotlight" aria-hidden="true"></div>
 
-  <header class="nav">
+  <header class="nav" id="siteHeader">
     <div class="wrap nav-inner">
       <a class="brand" href="#top" aria-label="Home">
         <span class="brand-dot" aria-hidden="true"></span>
@@ -32,7 +32,7 @@
         <a href="#featured">Featured</a>
         <a href="#work">Work</a>
         <a href="#approach">Approach</a>
-        <a class="pill" href="#contact">Contact</a>
+        <a class="pill mag" href="#contact">Contact</a>
       </nav>
 
       <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
@@ -55,35 +55,35 @@
     <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="kicker">Portfolio</p>
+          <p class="kicker reveal">Portfolio</p>
 
-          <h1 class="h1">
+          <h1 class="h1 reveal">
             Software that feels
             <span class="grad">inevitable</span>.
           </h1>
 
-          <p class="lead">
+          <p class="lead reveal">
             Programming + AI projects built with clarity, reliability, and finish.
           </p>
 
-          <div class="actions">
+          <div class="actions reveal">
             <a class="btn mag" href="#featured">Explore</a>
             <a class="btn ghost mag" href="./resume.pdf" target="_blank" rel="noreferrer">Resume</a>
           </div>
 
-          <div class="meta">
+          <div class="meta reveal">
             <a href="mailto:coltenhargett@gmail.com">coltenhargett@gmail.com</a>
             <span class="dot" aria-hidden="true"></span>
             <a href="https://www.linkedin.com/in/colten-hargett" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
 
-          <p class="note muted">
+          <p class="note muted reveal">
             Some work is private to protect coursework. I can share code, demos, or walkthroughs on request.
           </p>
         </div>
 
-        <!-- “how did he do that?” orb -->
-        <aside class="orb-wrap" aria-label="Interactive orb">
+        <!-- orb -->
+        <aside class="orb-wrap reveal" aria-label="Interactive orb">
           <div class="orb" id="orb">
             <div class="orb-sheen" aria-hidden="true"></div>
             <div class="orb-core" aria-hidden="true"></div>
@@ -102,7 +102,6 @@
         </header>
 
         <div class="featured-grid">
-          <!-- Featured 1 -->
           <article class="feature reveal tilt">
             <div class="feature-top">
               <p class="feature-k">Featured project</p>
@@ -127,7 +126,6 @@
             </div>
           </article>
 
-          <!-- Featured 2 -->
           <article class="feature reveal tilt">
             <div class="feature-top">
               <p class="feature-k">Featured project</p>
@@ -160,13 +158,10 @@
       <div class="wrap">
         <header class="head reveal">
           <h2 class="h2">Work</h2>
-          <p class="muted">
-            Organized into collections. Open a folder to browse.
-          </p>
+          <p class="muted">Organized into collections. Open a folder to browse.</p>
         </header>
 
         <div class="folders">
-          <!-- Collection: Automation -->
           <details class="folder reveal" id="collection-automation">
             <summary class="folder-head">
               <div class="folder-left">
@@ -176,9 +171,7 @@
                   <p class="folder-sub">Systems that make work faster and cleaner.</p>
                 </div>
               </div>
-              <span class="folder-meta" aria-hidden="true">
-                <span class="chev">›</span>
-              </span>
+              <span class="folder-meta" aria-hidden="true"><span class="chev">›</span></span>
             </summary>
 
             <div class="folder-body">
@@ -214,7 +207,6 @@
             </div>
           </details>
 
-          <!-- Collection: Data -->
           <details class="folder reveal" id="collection-data">
             <summary class="folder-head">
               <div class="folder-left">
@@ -260,7 +252,6 @@
             </div>
           </details>
 
-          <!-- Collection: Web -->
           <details class="folder reveal" id="collection-web">
             <summary class="folder-head">
               <div class="folder-left">
@@ -280,7 +271,7 @@
                   <p class="sub">Apple-like narrative + motion without frameworks.</p>
                   <ul class="bullets">
                     <li>Folders/collections layout + featured section.</li>
-                    <li>Sticky scroll story with gated updates (no early cycling).</li>
+                    <li>Sticky story that updates only when content is readable.</li>
                     <li>Accessibility + reduced-motion support.</li>
                   </ul>
                   <div class="row">
@@ -313,7 +304,7 @@
       </div>
     </section>
 
-    <!-- APPROACH (Sticky story) -->
+    <!-- APPROACH -->
     <section class="section soft" id="approach">
       <div class="wrap">
         <header class="head reveal">
@@ -340,26 +331,33 @@
           </div>
 
           <div class="story-right" id="storySteps">
-            <div class="step-sentinel" id="stepSentinel" aria-hidden="true"></div>
-            <article class="step reveal" data-kicker="Clarity" data-title="Readable systems."
+            <article class="step reveal"
+              data-kicker="Clarity"
+              data-title="Readable systems."
               data-body="I design for understanding first—clean data flow, stable interfaces, predictable outputs.">
               <h3>Clarity</h3>
               <p>Readable code, simple structure, outputs that make sense without explanation.</p>
             </article>
 
-            <article class="step reveal" data-kicker="Reliability" data-title="Defensive by default."
+            <article class="step reveal"
+              data-kicker="Reliability"
+              data-title="Defensive by default."
               data-body="I assume inputs can be messy. I validate, normalize, and fail in useful ways.">
               <h3>Reliability</h3>
               <p>Defensive parsing, safe defaults, useful errors—no silent failures.</p>
             </article>
 
-            <article class="step reveal" data-kicker="Finish" data-title="Small details matter."
+            <article class="step reveal"
+              data-kicker="Finish"
+              data-title="Small details matter."
               data-body="Polish is not decoration. It's what makes tools feel trustworthy and intentional.">
               <h3>Finish</h3>
               <p>Spacing, naming, UI behavior, edge-case handling—the final 10%.</p>
             </article>
 
-            <article class="step reveal" data-kicker="AI" data-title="AI that improves usefulness."
+            <article class="step reveal"
+              data-kicker="AI"
+              data-title="AI that improves usefulness."
               data-body="I like AI when it removes friction: smarter organization, better summaries, better decisions.">
               <h3>AI (when it helps)</h3>
               <p>Practical intelligence only. Not “AI for AI’s sake.”</p>
@@ -415,6 +413,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=3" defer></script>
+  <script src="./script.js?v=5" defer></script>
 </body>
 </html>
