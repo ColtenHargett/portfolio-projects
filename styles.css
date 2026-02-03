@@ -431,15 +431,22 @@ a:hover{ text-decoration:underline; }
 .small{ font-size: 13px; }
 
 /* Reveal (softer, Apple-like) */
+/* Reveal only when JS is confirmed running */
 .reveal{
-  opacity:0;
+  opacity: 1;
+  transform: none;
+}
+
+html.js .reveal{
+  opacity: 0;
   transform: translateY(8px);
   transition: opacity .7s ease, transform .7s ease;
   will-change: opacity, transform;
 }
-.reveal.show{
-  opacity:1;
-  transform:none;
+
+html.js .reveal.show{
+  opacity: 1;
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce){
