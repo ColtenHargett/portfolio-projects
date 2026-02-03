@@ -3,254 +3,238 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark" />
+  <meta name="color-scheme" content="light" />
   <title>Colten Hargett</title>
-  <meta name="description" content="Colten Hargett — selected programming and AI projects." />
-  <link rel="stylesheet" href="./styles.css?v=1" />
+  <meta name="description" content="Colten Hargett — programming and AI portfolio." />
+
+  <link rel="stylesheet" href="./styles.css?v=2" />
 </head>
 
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="topbar">
-    <div class="wrap topbar-inner">
-      <a class="wordmark" href="#top" aria-label="Home">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Colten Hargett</span>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">Colten Hargett</span>
       </a>
 
-      <nav class="nav" aria-label="Primary">
-        <button class="nav-btn" id="navBtn" aria-expanded="false" aria-controls="navMenu">
-          Menu
-        </button>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a class="pill" href="#contact">Contact</a></li>
-        </ul>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#story">Approach</a>
+        <a href="#contact" class="pill">Contact</a>
       </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
+        Menu
+      </button>
+    </div>
+
+    <div class="mobile" id="mobileMenu" hidden>
+      <div class="wrap mobile-inner">
+        <a href="#work" class="m-link">Work</a>
+        <a href="#story" class="m-link">Approach</a>
+        <a href="#contact" class="m-link m-pill">Contact</a>
+      </div>
     </div>
   </header>
 
   <main id="main">
+    <!-- HERO -->
     <section class="hero" id="top">
       <div class="wrap hero-grid">
-        <div class="hero-left">
+        <div class="hero-copy">
           <p class="kicker">Portfolio</p>
-          <h1 class="title">
-            Programming + AI work,<br />
-            designed to be useful.
+
+          <h1 class="h1">
+            Software that feels
+            <span class="grad">finished</span>.
           </h1>
+
           <p class="lead">
-            I build clean, reliable software—from small tools to larger systems—where clarity matters as much as capability.
+            Programming + AI projects built with clarity, reliability, and detail.
           </p>
 
-          <div class="cta">
-            <a class="button" href="#projects">View selected work</a>
-            <a class="button ghost" href="./resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <div class="actions">
+            <a class="btn" href="#work">View work</a>
+            <a class="btn ghost" href="./resume.pdf" target="_blank" rel="noreferrer">Resume</a>
           </div>
 
           <div class="meta">
             <a href="mailto:coltenhargett@gmail.com">coltenhargett@gmail.com</a>
-            <span class="sep" aria-hidden="true">•</span>
+            <span class="dot" aria-hidden="true"></span>
             <a href="https://www.linkedin.com/in/colten-hargett" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </div>
 
-        <aside class="hero-right" aria-label="Highlights">
-          <div class="panel">
-            <p class="panel-title">What I optimize for</p>
-            <ul class="tight">
-              <li><strong>Clarity:</strong> readable code, simple interfaces, predictable behavior.</li>
-              <li><strong>Reliability:</strong> defensive parsing, safe defaults, useful errors.</li>
-              <li><strong>Finish:</strong> polished details that make software feel intentional.</li>
-            </ul>
+        <!-- “How did he do that?” orb -->
+        <aside class="orb-wrap" aria-label="Interactive orb">
+          <div class="orb" id="orb">
+            <div class="orb-sheen" aria-hidden="true"></div>
+            <div class="orb-core" aria-hidden="true"></div>
           </div>
-
-          <div class="panel subtle">
-            <p class="panel-title">Note</p>
-            <p class="muted">
-              Some work is intentionally private to protect coursework. I’m happy to share code or demos on request.
-            </p>
-          </div>
+          <p class="orb-caption">Moves with your cursor. No images.</p>
         </aside>
       </div>
     </section>
 
-    <section class="section" id="projects">
+    <!-- WORK -->
+    <section class="section" id="work">
       <div class="wrap">
-        <div class="section-head">
+        <header class="head">
           <h2 class="h2">Selected work</h2>
-          <p class="muted">
-            Short, concrete write-ups—what it does, how it works, and what I learned.
-          </p>
+          <p class="muted">Private-safe writeups: problem → build → decisions.</p>
+        </header>
+
+        <div class="grid">
+          <article class="card">
+            <h3 class="h3">Intelligent Course Planner</h3>
+            <p class="sub">Constraint-based planner that outputs clean, usable paths.</p>
+            <ul class="bullets">
+              <li>Turns requirements into structured plans with guardrails.</li>
+              <li>Handles conflicts, partial completion, and “no valid path” cases.</li>
+              <li>Designed for iteration—easy to update inputs and regenerate.</li>
+            </ul>
+            <div class="row">
+              <span class="tag">Python</span><span class="tag">Automation</span><span class="tag">AI-ready</span>
+              <a class="mini" href="mailto:coltenhargett@gmail.com?subject=Code%20Request%20-%20Intelligent%20Course%20Planner">Code on request</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="h3">Market Tracker Prototype</h3>
+            <p class="sub">Reliable fetch → parse → normalize → summarize pipeline.</p>
+            <ul class="bullets">
+              <li>Defensive parsing to keep outputs trustworthy.</li>
+              <li>Summaries optimized for scanning: what changed and why.</li>
+              <li>Architecture leaves room for future AI features.</li>
+            </ul>
+            <div class="row">
+              <span class="tag">Python</span><span class="tag">APIs</span><span class="tag">Data</span>
+              <a class="mini" href="mailto:coltenhargett@gmail.com?subject=Code%20Request%20-%20Market%20Tracker">Code on request</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="h3">Portfolio System</h3>
+            <p class="sub">Apple-like presentation: motion, whitespace, precision.</p>
+            <ul class="bullets">
+              <li>Sticky scroll story section (below) + progress indicator.</li>
+              <li>Minimal dependencies; GitHub Pages friendly.</li>
+              <li>Easy to edit without breaking layout.</li>
+            </ul>
+            <div class="row">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+              <a class="mini" href="#story">See approach</a>
+            </div>
+          </article>
         </div>
-
-        <ol class="project-list" id="projectList">
-          <!-- Project 1 -->
-          <li class="project" data-tags="python,ai,automation">
-            <div class="project-top">
-              <div>
-                <h3 class="h3">Intelligent Course Planner</h3>
-                <p class="summary">
-                  A planning tool that turns requirements into a clean, usable path—focused on constraints, edge cases, and readability.
-                </p>
-              </div>
-
-              <div class="project-actions">
-                <span class="badge">Private</span>
-                <a class="link" href="mailto:coltenhargett@gmail.com?subject=Code%20Request%20-%20Intelligent%20Course%20Planner">Code on request</a>
-              </div>
-            </div>
-
-            <details class="details">
-              <summary>Read more</summary>
-              <div class="details-body">
-                <ul>
-                  <li>Converted requirement rules into structured output (dependencies, prerequisites, optional paths).</li>
-                  <li>Designed for fast iteration: easy to update inputs and regenerate plans without rewriting logic.</li>
-                  <li>Prioritized “clean output” and guardrails so users don’t get confusing or impossible plans.</li>
-                </ul>
-                <p class="muted small">
-                  Replace this text with your real details—no class name needed.
-                </p>
-              </div>
-            </details>
-
-            <div class="tags">
-              <span>Python</span><span>Automation</span><span>AI-ready</span>
-            </div>
-          </li>
-
-          <!-- Project 2 -->
-          <li class="project" data-tags="python,data,api">
-            <div class="project-top">
-              <div>
-                <h3 class="h3">Market Tracker Prototype</h3>
-                <p class="summary">
-                  A lightweight tracker that fetches and summarizes changes—built for accuracy, stability, and clean presentation.
-                </p>
-              </div>
-
-              <div class="project-actions">
-                <span class="badge">Private</span>
-                <a class="link" href="mailto:coltenhargett@gmail.com?subject=Code%20Request%20-%20Market%20Tracker">Code on request</a>
-              </div>
-            </div>
-
-            <details class="details">
-              <summary>Read more</summary>
-              <div class="details-body">
-                <ul>
-                  <li>Built a reliable fetch → parse → normalize pipeline with defensive handling for malformed rows.</li>
-                  <li>Focused on making summaries scannable (what changed, where, and why it matters).</li>
-                  <li>Designed the architecture so AI features can plug in later without reworking the core.</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="tags">
-              <span>Python</span><span>APIs</span><span>Data</span>
-            </div>
-          </li>
-
-          <!-- Project 3 -->
-          <li class="project" data-tags="web,design,ui">
-            <div class="project-top">
-              <div>
-                <h3 class="h3">Editorial Portfolio System</h3>
-                <p class="summary">
-                  A personal site template inspired by photo-essay layouts: typography-forward, minimal UI, and easy to update.
-                </p>
-              </div>
-
-              <div class="project-actions">
-                <a class="link" href="#top">You’re viewing it</a>
-              </div>
-            </div>
-
-            <details class="details">
-              <summary>Read more</summary>
-              <div class="details-body">
-                <ul>
-                  <li>Structured around content first: large headings, whitespace, and simple hierarchy.</li>
-                  <li>No popups, no heavy UI—just subtle motion, strong spacing, and clean reading flow.</li>
-                  <li>Built to host on GitHub Pages with minimal moving parts.</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span>
-            </div>
-          </li>
-        </ol>
       </div>
     </section>
 
-    <section class="section" id="about">
+    <!-- STICKY APPLE-LIKE STORY -->
+    <section class="story" id="story" aria-label="Approach story">
       <div class="wrap">
-        <div class="section-head">
-          <h2 class="h2">About</h2>
-          <p class="muted">Short and human—enough context, not a LinkedIn rewrite.</p>
+        <header class="head">
+          <h2 class="h2">Approach</h2>
+          <p class="muted">Scroll. The page tells the story.</p>
+        </header>
+
+        <div class="story-shell">
+          <div class="story-left">
+            <div class="progress">
+              <span class="progress-bar" id="progressBar"></span>
+            </div>
+
+            <div class="story-stage" id="storyStage" aria-hidden="true">
+              <div class="stage-card">
+                <p class="stage-kicker" id="stageKicker">Clarity</p>
+                <p class="stage-title" id="stageTitle">Readable systems.</p>
+                <p class="stage-body" id="stageBody">
+                  I design for understanding first—clean data flow, stable interfaces, predictable outputs.
+                </p>
+              </div>
+
+              <div class="stage-glow" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="story-right" id="storySteps">
+            <article class="step" data-kicker="Clarity" data-title="Readable systems."
+              data-body="I design for understanding first—clean data flow, stable interfaces, predictable outputs.">
+              <h3>Clarity</h3>
+              <p>Readable code, simple structure, outputs that make sense without explanation.</p>
+            </article>
+
+            <article class="step" data-kicker="Reliability" data-title="Defensive by default."
+              data-body="I assume inputs can be messy. I validate, normalize, and fail in useful ways.">
+              <h3>Reliability</h3>
+              <p>Defensive parsing, safe defaults, useful errors—no silent failures.</p>
+            </article>
+
+            <article class="step" data-kicker="Finish" data-title="Small details matter."
+              data-body="Polish is not decoration. It's what makes tools feel trustworthy and intentional.">
+              <h3>Finish</h3>
+              <p>Spacing, naming, UI behavior, edge-case handling—the “final 10%.”</p>
+            </article>
+
+            <article class="step" data-kicker="AI" data-title="AI that improves usefulness."
+              data-body="I like AI when it removes friction: smarter organization, better summaries, better decisions.">
+              <h3>AI (when it helps)</h3>
+              <p>Not “AI for AI’s sake.” Practical intelligence only.</p>
+            </article>
+          </div>
         </div>
 
-        <div class="about">
-          <p>
-            I’m a Computer Science and Data Science student focused on building software that’s practical and well-finished.
-            I like projects where technical decisions show up in the user experience: faster workflows, clearer output,
-            fewer failure points, and tools that people actually want to use.
-          </p>
-          <p class="muted">
-            I’m especially interested in AI when it improves usefulness—better organization, better summaries, better decisions—not “AI for AI’s sake.”
-          </p>
-        </div>
+        <p class="note muted">
+          Some projects are private to protect coursework. I can share code, demos, or walkthroughs on request.
+        </p>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="wrap">
-        <div class="section-head">
+        <header class="head">
           <h2 class="h2">Contact</h2>
-          <p class="muted">Quickest way to reach me.</p>
-        </div>
+          <p class="muted">Best way to reach me.</p>
+        </header>
 
         <div class="contact">
-          <a class="contact-card" href="mailto:coltenhargett@gmail.com">
+          <a class="c-card" href="mailto:coltenhargett@gmail.com">
             <div>
-              <p class="contact-label">Email</p>
-              <p class="contact-value">coltenhargett@gmail.com</p>
+              <p class="label">Email</p>
+              <p class="value">coltenhargett@gmail.com</p>
             </div>
             <span class="arrow" aria-hidden="true">→</span>
           </a>
 
-          <a class="contact-card" href="https://www.linkedin.com/in/colten-hargett" target="_blank" rel="noreferrer">
+          <a class="c-card" href="https://www.linkedin.com/in/colten-hargett" target="_blank" rel="noreferrer">
             <div>
-              <p class="contact-label">LinkedIn</p>
-              <p class="contact-value">colten-hargett</p>
+              <p class="label">LinkedIn</p>
+              <p class="value">colten-hargett</p>
             </div>
             <span class="arrow" aria-hidden="true">→</span>
           </a>
 
-          <a class="contact-card" href="./resume.pdf" target="_blank" rel="noreferrer">
+          <a class="c-card" href="./resume.pdf" target="_blank" rel="noreferrer">
             <div>
-              <p class="contact-label">Resume</p>
-              <p class="contact-value">resume.pdf</p>
+              <p class="label">Resume</p>
+              <p class="value">resume.pdf</p>
             </div>
             <span class="arrow" aria-hidden="true">→</span>
           </a>
         </div>
+
+        <footer class="footer">
+          <p class="muted small">© <span id="year"></span> Colten Hargett</p>
+          <a class="muted small" href="#top">Back to top</a>
+        </footer>
       </div>
     </section>
-
-    <footer class="footer">
-      <div class="wrap footer-inner">
-        <p class="muted small">© <span id="year"></span> Colten Hargett</p>
-        <a class="muted small" href="#top">Back to top</a>
-      </div>
-    </footer>
   </main>
 
-  <script src="./script.js?v=1" defer></script>
+  <script src="./script.js?v=2" defer></script>
 </body>
 </html>
