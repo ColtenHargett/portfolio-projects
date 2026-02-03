@@ -1,198 +1,262 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark" />
-  <title>Colten Hargett | Portfolio</title>
-  <meta name="description" content="Colten Hargett — programming & AI projects." />
+const PROJECTS = [
+  {
+    title: "Intelligent Course Planner",
+    short: "A planning tool that helps map requirements into a clean, usable graduation path.",
+    details:
+      "Built a lightweight planner that converts program requirements into a structured plan, emphasizing clarity and real-world usability.",
+    tags: ["Python", "Data", "Automation"],
+    bullets: [
+      "Transforms requirement rules into a structured plan",
+      "Designed for quick edits and clear output",
+      "Built to be extendable for different programs"
+    ],
+    links: [
+      // Keep private: use type "request" instead of repo/demo
+      { type: "request", label: "Code available on request", href: "mailto:coltenhargett@gmail.com?subject=Code%20Request" }
+    ],
+    featured: true
+  },
+  {
+    title: "Market Tracker Prototype",
+    short: "Tracks symbols and surfaces changes with a clean, minimal interface.",
+    details:
+      "A small prototype focused on reliable data fetching, defensive parsing, and simple summaries.",
+    tags: ["Python", "APIs"],
+    bullets: [
+      "Reliable fetching and parsing pipeline",
+      "Clear summaries built for quick scanning",
+      "Designed for future AI-assisted insights"
+    ],
+    links: [
+      { type: "request", label: "Code available on request", href: "mailto:coltenhargett@gmail.com?subject=Code%20Request" }
+    ]
+  },
+  {
+    title: "Modern Web Showcase",
+    short: "A minimalist site template optimized for readability and polish.",
+    details:
+      "A clean, responsive layout with filtering and a focused visual style (inspired by editorial/photo-essay design).",
+    tags: ["HTML", "CSS", "JavaScript"],
+    bullets: [
+      "Fast, responsive layout",
+      "Project filtering + search",
+      "Subtle motion and modal details"
+    ],
+    links: [
+      // Example demo link. Replace or remove.
+      { type: "demo", label: "Live", href: "#" }
+    ]
+  }
+];
 
-  <!-- Use ./ for GitHub Pages reliability -->
-  <link rel="stylesheet" href="./styles.css?v=1" />
-</head>
+// Utilities
+function uniq(arr) {
+  return [...new Set(arr)];
+}
 
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (typeof text === "string") node.textContent = text;
+  return node;
+}
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">Colten Hargett</span>
-      </a>
+// Modal
+const modal = {
+  backdrop: null,
+  root: null,
+  title: null,
+  desc: null,
+  tags: null,
+  bullets: null,
+  actions: null,
+  closeBtn: null
+};
 
-      <nav class="nav" aria-label="Primary">
-        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
-          Menu
-        </button>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a class="btn btn-small" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+function openModal(project) {
+  modal.title.textContent = project.title;
+  modal.desc.textContent = project.details || project.short;
 
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">Portfolio</p>
-          <h1 class="headline">Programming and AI projects, built with care.</h1>
-          <p class="subhead">
-            A curated set of work across automation, data-driven tools, and lightweight intelligent systems.
-          </p>
+  modal.tags.innerHTML = "";
+  (project.tags || []).forEach(t => modal.tags.appendChild(el("span", "tag", t)));
 
-          <div class="hero-actions">
-            <a class="btn" href="#projects">View projects</a>
-            <a class="btn btn-ghost" href="#contact">Contact</a>
-          </div>
+  modal.bullets.innerHTML = "";
+  (project.bullets || []).forEach(b => {
+    const li = document.createElement("li");
+    li.textContent = b;
+    modal.bullets.appendChild(li);
+  });
 
-          <div class="hero-meta">
-            <a href="mailto:coltenhargett@gmail.com">coltenhargett@gmail.com</a>
-            <span class="dot" aria-hidden="true"></span>
-            <a href="https://www.linkedin.com/in/colten-hargett" target="_blank" rel="noreferrer">LinkedIn</a>
-            <span class="dot" aria-hidden="true"></span>
-            <a href="./resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-          </div>
-        </div>
+  modal.actions.innerHTML = "";
+  (project.links || []).forEach(l => {
+    const a = el("a", "link", l.label);
+    a.href = l.href;
+    if (l.type === "demo" || l.type === "repo") {
+      a.target = "_blank";
+      a.rel = "noreferrer";
+    }
+    modal.actions.appendChild(a);
+  });
 
-        <aside class="hero-card" aria-label="Featured project">
-          <div class="hero-card-inner">
-            <p class="card-title">Featured</p>
-            <p class="card-text" id="featuredText">
-              Add at least one project in script.js and I’ll feature it here automatically.
-            </p>
-            <div class="card-tags" id="featuredTags" aria-label="Featured tags"></div>
-            <a class="card-link" id="featuredLink" href="#projects">See all projects →</a>
-          </div>
-        </aside>
-      </div>
-    </section>
+  modal.backdrop.hidden = false;
+  modal.root.hidden = false;
+  document.body.style.overflow = "hidden";
+}
 
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="section-head">
-          <h2>Projects</h2>
-          <p class="muted">
-            You can keep code private and still show what you built: problem, approach, outcome.
-          </p>
-        </div>
+function closeModal() {
+  modal.backdrop.hidden = true;
+  modal.root.hidden = true;
+  document.body.style.overflow = "";
+}
 
-        <div class="toolbar">
-          <label class="search">
-            <span class="sr-only">Search projects</span>
-            <input id="projectSearch" type="search" placeholder="Search projects…" autocomplete="off" />
-          </label>
+// Render
+function renderProjects(list) {
+  const grid = document.getElementById("projectGrid");
+  grid.innerHTML = "";
 
-          <label class="filter">
-            <span class="sr-only">Filter by tag</span>
-            <select id="tagFilter">
-              <option value="all">All tags</option>
-            </select>
-          </label>
-        </div>
+  if (!list.length) {
+    grid.appendChild(el("p", "muted", "No projects match your search."));
+    return;
+  }
 
-        <div class="grid" id="projectGrid" aria-live="polite"></div>
+  for (const p of list) {
+    const card = el("article", "card");
+    const body = el("div", "card-body");
 
-        <p class="muted footnote">
-          Tip: Want to protect coursework? Keep repos private and set “Code” to “Available on request.”
-        </p>
-      </div>
-    </section>
+    const title = el("h3", null, p.title);
+    const desc = el("p", null, p.short);
 
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-head">
-          <h2>About</h2>
-          <p class="muted">A short snapshot, focused on the work.</p>
-        </div>
+    const tagWrap = el("div", "card-tags");
+    (p.tags || []).slice(0, 4).forEach(t => tagWrap.appendChild(el("span", "tag", t)));
 
-        <div class="about">
-          <div class="about-card">
-            <h3>Focus</h3>
-            <p>
-              I’m a Computer Science and Data Science student at Loyola University Maryland, and I like building software
-              that feels clean, fast, and useful. I’m especially interested in AI-powered tools that solve real problems
-              without feeling overcomplicated.  [oai_citation:1‡Colten Hargett Resume.pdf](sediment://file_00000000ff04722faab3238d3ce3e6c7)
-            </p>
-          </div>
+    const footer = el("div", "card-footer");
+    const links = el("div", "links");
 
-          <div class="about-card">
-            <h3>How I work</h3>
-            <p>
-              I value clarity: readable code, thoughtful UX, and projects that are easy to run and easy to understand.
-              I prefer shipping something solid over adding features that don’t matter.
-            </p>
-          </div>
+    // Small "Details" button that opens modal (doesn't expose code)
+    const detailsBtn = el("button", "link muted-link", "Details");
+    detailsBtn.type = "button";
+    detailsBtn.addEventListener("click", () => openModal(p));
+    links.appendChild(detailsBtn);
 
-          <div class="about-card">
-            <h3>Leadership</h3>
-            <p>
-              I’ve led teams in high-responsibility environments, training new staff, improving workflows, and handling
-              real-world issues calmly and consistently.  [oai_citation:2‡Colten Hargett Resume.pdf](sediment://file_00000000ff04722faab3238d3ce3e6c7)
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    // Optional quick link (demo/repo/request)
+    const primary = (p.links || [])[0];
+    if (primary) {
+      const a = el("a", "link", primary.label);
+      a.href = primary.href;
+      if (primary.type === "demo" || primary.type === "repo") {
+        a.target = "_blank";
+        a.rel = "noreferrer";
+      }
+      links.appendChild(a);
+    }
 
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-head">
-          <h2>Contact</h2>
-          <p class="muted">Quickest way to reach me.</p>
-        </div>
+    footer.appendChild(links);
 
-        <div class="contact">
-          <div class="contact-card">
-            <h3>Email</h3>
-            <p class="muted">Send a note and I’ll respond as soon as I can.</p>
-            <a class="btn" href="mailto:coltenhargett@gmail.com">coltenhargett@gmail.com</a>
+    body.appendChild(title);
+    body.appendChild(desc);
+    body.appendChild(tagWrap);
+    body.appendChild(footer);
 
-            <div class="callout">
-              <p class="callout-title">Optional</p>
-              <p class="muted">
-                If you want a real form (not mailto), I can wire this to Formspree/Netlify Forms.
-              </p>
-            </div>
-          </div>
+    card.appendChild(body);
+    grid.appendChild(card);
+  }
+}
 
-          <div class="contact-card">
-            <h3>Links</h3>
-            <ul class="link-list">
-              <li><a href="https://www.linkedin.com/in/colten-hargett" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              <li><a href="./resume.pdf" target="_blank" rel="noreferrer">Resume</a></li>
-              <li><a href="mailto:coltenhargett@gmail.com">coltenhargett@gmail.com</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+function setupFilters() {
+  const search = document.getElementById("projectSearch");
+  const filter = document.getElementById("tagFilter");
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p class="muted">© <span id="year"></span> Colten Hargett</p>
-      <a class="muted" href="#top">Back to top</a>
-    </div>
-  </footer>
+  const allTags = uniq(PROJECTS.flatMap(p => p.tags || [])).sort((a, b) => a.localeCompare(b));
+  allTags.forEach(t => {
+    const opt = document.createElement("option");
+    opt.value = t;
+    opt.textContent = t;
+    filter.appendChild(opt);
+  });
 
-  <div class="modal-backdrop" id="modalBackdrop" hidden></div>
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
-    <div class="modal-inner">
-      <div class="modal-head">
-        <h3 id="modalTitle">Project</h3>
-        <button class="icon-btn" id="modalClose" aria-label="Close">×</button>
-      </div>
-      <p class="muted" id="modalDesc"></p>
-      <div class="modal-tags" id="modalTags"></div>
-      <ul class="modal-bullets" id="modalBullets"></ul>
-      <div class="modal-actions" id="modalActions"></div>
-    </div>
-  </div>
+  function apply() {
+    const q = search.value.trim().toLowerCase();
+    const tag = filter.value;
 
-  <script src="./script.js?v=1" defer></script>
-</body>
-</html>
+    const filtered = PROJECTS.filter(p => {
+      const matchesQuery =
+        !q ||
+        p.title.toLowerCase().includes(q) ||
+        (p.short || "").toLowerCase().includes(q) ||
+        (p.details || "").toLowerCase().includes(q) ||
+        (p.tags || []).some(t => t.toLowerCase().includes(q));
+
+      const matchesTag = tag === "all" || (p.tags || []).includes(tag);
+      return matchesQuery && matchesTag;
+    });
+
+    renderProjects(filtered);
+  }
+
+  search.addEventListener("input", apply);
+  filter.addEventListener("change", apply);
+  apply();
+}
+
+function setupNav() {
+  const toggle = document.getElementById("navToggle");
+  const menu = document.getElementById("navMenu");
+  if (!toggle || !menu) return;
+
+  toggle.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  menu.addEventListener("click", (e) => {
+    const t = e.target;
+    if (t && t.tagName === "A") {
+      menu.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+function setupModal() {
+  modal.backdrop = document.getElementById("modalBackdrop");
+  modal.root = document.getElementById("modal");
+  modal.title = document.getElementById("modalTitle");
+  modal.desc = document.getElementById("modalDesc");
+  modal.tags = document.getElementById("modalTags");
+  modal.bullets = document.getElementById("modalBullets");
+  modal.actions = document.getElementById("modalActions");
+  modal.closeBtn = document.getElementById("modalClose");
+
+  modal.backdrop.addEventListener("click", closeModal);
+  modal.closeBtn.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.root.hidden) closeModal();
+  });
+}
+
+function setupFeatured() {
+  const featured = PROJECTS.find(p => p.featured) || PROJECTS[0];
+  if (!featured) return;
+
+  const text = document.getElementById("featuredText");
+  const tags = document.getElementById("featuredTags");
+  const link = document.getElementById("featuredLink");
+
+  text.textContent = featured.short;
+
+  tags.innerHTML = "";
+  (featured.tags || []).slice(0, 3).forEach(t => tags.appendChild(el("span", "tag", t)));
+
+  link.href = "#projects";
+}
+
+function init() {
+  document.getElementById("year").textContent = String(new Date().getFullYear());
+  setupNav();
+  setupModal();
+  setupFeatured();
+  setupFilters();
+}
+
+document.addEventListener("DOMContentLoaded", init);
