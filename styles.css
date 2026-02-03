@@ -299,6 +299,9 @@ a:hover{ text-decoration:underline; }
 /* Story */
 .story-shell{ display:grid; grid-template-columns: .95fr 1.05fr; gap: 18px; align-items:start; }
 .story-left{ position: sticky; top: 96px; }
+.step-sentinel{
+  height: 90px;
+}
 .progress{
   height: 6px; border-radius: 999px;
   background: rgba(11,12,15,.08);
