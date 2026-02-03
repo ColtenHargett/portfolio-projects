@@ -1,9 +1,9 @@
+function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
 function setYear() {
   const y = document.getElementById("year");
   if (y) y.textContent = String(new Date().getFullYear());
 }
-
-function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
 
 function mobileMenu() {
   const btn = document.getElementById("menuBtn");
@@ -11,10 +11,10 @@ function mobileMenu() {
   if (!btn || !menu) return;
 
   btn.addEventListener("click", () => {
-    const open = menu.hasAttribute("hidden");
-    if (open) menu.removeAttribute("hidden");
+    const opening = menu.hasAttribute("hidden");
+    if (opening) menu.removeAttribute("hidden");
     else menu.setAttribute("hidden", "");
-    btn.setAttribute("aria-expanded", String(open));
+    btn.setAttribute("aria-expanded", String(opening));
   });
 
   menu.addEventListener("click", (e) => {
@@ -29,6 +29,9 @@ function mobileMenu() {
 function spotlight() {
   const el = document.getElementById("spotlight");
   if (!el) return;
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return;
 
   let raf = 0;
   window.addEventListener("mousemove", (e) => {
@@ -59,6 +62,40 @@ function topProgress() {
   tick();
 }
 
+function headerBlur() {
+  const header = document.getElementById("siteHeader");
+  if (!header) return;
+
+  function tick() {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+  }
+
+  window.addEventListener("scroll", tick, { passive: true });
+  tick();
+}
+
+function parallaxHero() {
+  const hero = document.querySelector(".hero");
+  if (!hero) return;
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return;
+
+  let raf = 0;
+  function tick() {
+    raf = 0;
+    const y = window.scrollY * 0.12;
+    hero.style.setProperty("--heroParallax", `${y}px`);
+  }
+
+  window.addEventListener("scroll", () => {
+    if (raf) return;
+    raf = requestAnimationFrame(tick);
+  }, { passive: true });
+
+  tick();
+}
+
 function revealOnScroll() {
   const items = Array.from(document.querySelectorAll(".reveal"));
   if (!items.length) return;
@@ -66,11 +103,11 @@ function revealOnScroll() {
   const io = new IntersectionObserver((entries) => {
     for (const ent of entries) {
       if (ent.isIntersecting) {
-        ent.target.classList.add("in");
+        ent.target.classList.add("show");
         io.unobserve(ent.target);
       }
     }
-  }, { threshold: 0.12 });
+  }, { threshold: 0.14 });
 
   items.forEach(n => io.observe(n));
 }
@@ -166,140 +203,122 @@ function magneticButtons() {
   });
 }
 
+function magneticFolders() {
+  const els = document.querySelectorAll(".folder");
+  if (!els.length) return;
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return;
+
+  els.forEach(el => {
+    let raf = 0;
+    el.addEventListener("mousemove", (e) => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width / 2) / 22;
+        const y = (e.clientY - r.top - r.height / 2) / 22;
+        el.style.transform = `translate(${x}px, ${y}px) scale(1.01)`;
+        raf = 0;
+      });
+    });
+    el.addEventListener("mouseleave", () => {
+      el.style.transform = "";
+    });
+  });
+}
+
 /**
- * Fix: Approach cycling early
- * Gate updates until the steps container is actually visible.
+ * Stable Approach scroll logic (no observers fighting)
+ * Progress bar starts at first tick automatically.
  */
 function storyScroll() {
-  const sentinel = document.getElementById("stepSentinel");
+  const stepsWrap = document.getElementById("storySteps");
   const steps = Array.from(document.querySelectorAll("#storySteps .step"));
+
   const bar = document.getElementById("progressBar");
   const kicker = document.getElementById("stageKicker");
   const title = document.getElementById("stageTitle");
   const body = document.getElementById("stageBody");
   const stage = document.getElementById("storyStage");
 
-  if (!sentinel || !steps.length || !bar || !kicker || !title || !body || !stage) return;
+  if (!stepsWrap || !steps.length || !bar || !kicker || !title || !body || !stage) return;
 
-  let enabled = false;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function applyStep(el, idx) {
+  const minPct = Math.round((1 / steps.length) * 100);
+  let activeIdx = 0;
+
+  function decisionY() {
+    return window.innerHeight * 0.42;
+  }
+
+  function enabled() {
+    const r = stepsWrap.getBoundingClientRect();
+    return r.top < window.innerHeight * 0.65 && r.bottom > window.innerHeight * 0.35;
+  }
+
+  function apply(idx, animate) {
+    const el = steps[idx];
+    if (!el) return;
+
     kicker.textContent = el.dataset.kicker || "Approach";
     title.textContent = el.dataset.title || "—";
     body.textContent = el.dataset.body || "—";
 
-    const pct = Math.round(((idx + 1) / steps.length) * 100);
+    const pct = Math.max(minPct, Math.round(((idx + 1) / steps.length) * 100));
     bar.style.width = `${pct}%`;
 
-    stage.animate(
-      [{ transform: "translateY(0px)" }, { transform: "translateY(-2px)" }, { transform: "translateY(0px)" }],
-      { duration: 260, easing: "ease-out" }
-    );
-  }
-
-  // Only start reacting AFTER the sentinel is well into view
-  const gate = new IntersectionObserver((entries) => {
-    const ent = entries[0];
-    if (ent.isIntersecting) {
-      enabled = true;
-      gate.disconnect();
-
-      // Set initial state once we're truly in the section
-      applyStep(steps[0], 0);
-
-      // Start observing steps
-      steps.forEach(s => io.observe(s));
-    }
-  }, {
-    threshold: 1.0,
-    // require sentinel to be fully visible, and not too close to top
-    rootMargin: "-10% 0px -40% 0px"
-  });
-
-  const io = new IntersectionObserver((entries) => {
-    if (!enabled) return;
-
-    let best = null;
-    for (const ent of entries) {
-      if (!ent.isIntersecting) continue;
-      if (!best || ent.intersectionRatio > best.intersectionRatio) best = ent;
-    }
-    if (!best) return;
-
-    const el = best.target;
-    const idx = steps.indexOf(el);
-    applyStep(el, idx);
-  }, {
-    // makes steps "count" only when they're in the readable band
-    rootMargin: "-15% 0px -45% 0px",
-    threshold: [0.55, 0.7, 0.85]
-  });
-
-  gate.observe(sentinel);
-}
-/**
- * Folder behavior:
- * - smooth open/close animation (details height)
- * - open folder if URL hash matches
- */
-function folderUX() {
-  const folders = Array.from(document.querySelectorAll("details.folder"));
-  if (!folders.length) return;
-
-  // smooth animation for <details>
-  folders.forEach((d) => {
-    const summary = d.querySelector("summary");
-    const body = d.querySelector(".folder-body");
-    if (!summary || !body) return;
-
-    d.style.overflow = "hidden";
-
-    summary.addEventListener("click", (e) => {
-      // Let the default toggle happen, then animate
-      const willOpen = !d.open;
-
-      // If opening, set explicit height: summary + body
-      // If closing, set explicit height: summary only
-      requestAnimationFrame(() => {
-        const startH = d.getBoundingClientRect().height;
-
-        if (willOpen) {
-          d.open = true; // ensure open so body has height
-          const endH = summary.getBoundingClientRect().height + body.getBoundingClientRect().height;
-          d.animate(
-            [{ height: `${startH}px` }, { height: `${endH}px` }],
-            { duration: 260, easing: "ease-out" }
-          ).onfinish = () => { d.style.height = ""; };
-        } else {
-          const endH = summary.getBoundingClientRect().height;
-          d.animate(
-            [{ height: `${startH}px` }, { height: `${endH}px` }],
-            { duration: 220, easing: "ease-out" }
-          ).onfinish = () => {
-            d.open = false;
-            d.style.height = "";
-          };
-
-          // prevent instant close so animation can run
-          e.preventDefault();
-        }
-      });
-    });
-  });
-
-  // Open folder via hash
-  function openFromHash() {
-    const id = location.hash.replace("#", "");
-    if (!id) return;
-    const el = document.getElementById(id);
-    if (el && el.tagName === "DETAILS") {
-      el.open = true;
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (animate && !reduce) {
+      stage.animate(
+        [{ transform: "translateY(0px)" }, { transform: "translateY(-2px)" }, { transform: "translateY(0px)" }],
+        { duration: 220, easing: "ease-out" }
+      );
     }
   }
 
-  window.addEventListener("hashchange", openFromHash);
-  openFromHash();
+  // Start on first tick
+  apply(0, false);
+
+  let raf = 0;
+
+  function tick() {
+    raf = 0;
+    if (!enabled()) return;
+
+    const y = decisionY();
+
+    let bestIdx = 0;
+    let bestDist = Infinity;
+
+    for (let i = 0; i < steps.length; i++) {
+      const r = steps[i].getBoundingClientRect();
+      const visible = r.bottom > 0 && r.top < window.innerHeight;
+      if (!visible) continue;
+
+      const anchor = r.top + Math.min(36, r.height * 0.25);
+      const dist = Math.abs(anchor - y);
+
+      if (dist < bestDist) {
+        bestDist = dist;
+        bestIdx = i;
+      }
+    }
+
+    if (bestIdx !== activeIdx) {
+      activeIdx = bestIdx;
+      apply(activeIdx, true);
+    }
+  }
+
+  function onScroll() {
+    if (raf) return;
+    raf = requestAnimationFrame(tick);
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  tick();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -307,10 +326,12 @@ document.addEventListener("DOMContentLoaded", () => {
   mobileMenu();
   spotlight();
   topProgress();
+  headerBlur();
+  parallaxHero();
   revealOnScroll();
   orbMotion();
   tiltCards();
   magneticButtons();
+  magneticFolders();
   storyScroll();
-  folderUX();
 });
