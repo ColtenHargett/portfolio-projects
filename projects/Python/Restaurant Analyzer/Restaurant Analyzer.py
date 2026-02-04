@@ -1,12 +1,3 @@
-# Programmers: Colten, Victoria
-# Course:  CS151, Dr. Isaacman
-# Due Date: 12/9/25
-# Lab Assignment: PA 5
-# Problem Statement: Analyze restaurant data
-# Data In: file name of restaurant data
-# Data Out: average rating per cuisine, filtered restaurants based on min rating and price range written to a new file, graph of restaurant price distribution, most popular cuisine type
-# Credits: N/A
-# Input Files: restaurants.csv
 import os
 import matplotlib.pyplot as plt
 NAME = 0
@@ -15,11 +6,6 @@ COST_FOR_TWO = 7
 CUISINE_TYPE = 10
 
 
-# Leader: both, driver: Colten
-# Function name: get_filename
-# Purpose: Get a file_name that exists from the user
-# Parameters: None
-# Return: file_name as a string
 def get_filename():
     # get filename from user
     filename = input("Enter the filename of restaurant data: ").strip().lower()
@@ -32,11 +18,6 @@ def get_filename():
     return filename
 
 
-# Leader: both, driver: Colten
-# Function name: get_restaurant_data
-# Purpose: puts the data from the user inputted file into a list of lists
-# Parameters: file_name, the user inputted file name
-# Return: list of lists containing restaurant data
 def get_restaurant_data(filename):
     # initialize and open file
     restaurants = []
@@ -58,11 +39,6 @@ def get_restaurant_data(filename):
     return restaurants
 
 
-# Leader: Victoria
-# Function name: get_average_rating
-# Purpose: Obtain the average rating for each cuisine type
-# Parameters: List of lists that contains restaurant data
-# Return: Dictionary of each cuisine type and rating
 def get_average_rating(restaurants):
     cuisine_ratings = {}
     cuisine_counts = {}
@@ -88,11 +64,6 @@ def get_average_rating(restaurants):
     return average_ratings
 
 
-# Leader: Colten
-# Function name: get_filtered_restaurants
-# Purpose: gets the list of restaurants filtered by min rating and price range
-# Parameters: list of lists containing restaurant data, min rating, min price, max price
-# Return: list of lists of filtered restaurants
 def get_filtered_restaurants(min_rating, min_price, max_price, data):
     filtered_restaurants = []
 
@@ -106,11 +77,6 @@ def get_filtered_restaurants(min_rating, min_price, max_price, data):
     return filtered_restaurants
 
 
-# Leader: Victoria
-# Function name: write_to_file
-# Purpose: write restaurant name, cuisine type, rating, and approximate cost to a file
-# Parameters: list of lists of the restaurants we want to write and the new file name
-# Return: None
 def write_to_file(filtered_restaurants):
     # gets name for new file
     new_file_name = input("Enter a name for the new file: ").strip().lower()
@@ -122,11 +88,6 @@ def write_to_file(filtered_restaurants):
     new_file.close()
 
 
-# Leader: Colten
-# Function name: get_most_popular_cuisine_type
-# Purpose: finds the most popular cuisine type
-# Parameters: list of lists containing restaurant data
-# Return: the most popular cuisine type
 def get_most_popular_cuisine_type(restaurants):
     cuisine_types = {}
 
@@ -149,11 +110,6 @@ def get_most_popular_cuisine_type(restaurants):
     return cuisine_types
 
 
-# Leader: Victoria
-# Function name: get_price_for_two
-# Purpose: get the restaurant prices for two to display in graph
-# Parameters: list of lists containing restaurant data
-# Return: list of prices
 def get_price_for_two(restaurants):
     restaurant_prices = []
     # loops through each restaurant row and appends each cost for two
@@ -163,11 +119,6 @@ def get_price_for_two(restaurants):
     return restaurant_prices
 
 
-# Leader: Colten
-# Function name: display_graph
-# Purpose: Display a graph to the user of the distribution of restaurants across different price ranges of the price for two
-# Parameters: Data set as a list
-# Return: None
 def display_graph(restaurant_prices):
     # initialize variables
     x = []
@@ -194,11 +145,6 @@ def display_graph(restaurant_prices):
     plt.show()
 
 
-# Leader: Victoria
-# Function name: display_menu
-# Purpose: add HCI for the user to use the program with error checking
-# Parameters: None
-# Return: None
 def display_menu():
     print()
     print("----------------Menu:----------------")
@@ -219,11 +165,6 @@ def display_menu():
     return choice
 
 
-# Leader: Colten
-# Function name: get_valid_int
-# Purpose: get an integer from the user with specifications
-# Parameters: prompt as a string, error message as a string, min_value as a float/int, max_value as a float/int
-# Return: user response
 def get_valid_int(prompt, error, min_value, max_value=0):
     user_in = input(prompt + " ").strip()
 
@@ -244,11 +185,6 @@ def get_valid_int(prompt, error, min_value, max_value=0):
     return float(user_in)
 
 
-# Leader: both
-# Function name: main
-# Purpose: runs program
-# Parameters: None
-# Return: None
 def main():
     # greet the user
     print("Welcome to the restaurant listing!\n")
