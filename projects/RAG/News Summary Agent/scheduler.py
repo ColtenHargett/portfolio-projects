@@ -3,14 +3,14 @@ from datetime import datetime
 import subprocess
 
 # Desired run time
-TARGET_HOUR = 23
-TARGET_MINUTE = 57
+TARGET_HOUR = 12
+TARGET_MINUTE = 00
 
 # Path to scripts
-SCRAPER_PATH = "/Users/colten/PycharmProjects/News Agent/Scraper.py"
-DB_PATH = "/Users/colten/PycharmProjects/News Agent/Database_Builder.py"
-AGENT_PATH = "/Users/colten/PycharmProjects/News Agent/Agent.py"
-VENV_PYTHON = "/Users/colten/PycharmProjects/News Agent/.venv/bin/python"
+SCRAPER_PATH = "ENTER INFORMATION HERE"
+DB_PATH = "ENTER INFORMATION HERE"
+AGENT_PATH = "ENTER INFORMATION HERE"
+VENV_PYTHON = "ENTER INFORMATION HERE"
 
 def run_pipeline():
     print("Running daily news pipeline...")
