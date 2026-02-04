@@ -1,14 +1,3 @@
-/*
-# Programmers:  Grace Webster and Colton Hargett
-# Course:  CS212
-# Due Date: 1/30/2026
-# Lab Assignment: 2
-# Problem Statement: creates an ATM where users can see their balance, deposit, or withdraw
-# Data In: choice(1. deposit, 2. withdrawal, 3. balance, 4. exit), deposit amount, withdrawal amount
-# Data Out:  total balance, total deposit amount, total withdrawal amount
-# Credits: n/a
-*/
-
 import java.util.Scanner;
 
 public class Main{
