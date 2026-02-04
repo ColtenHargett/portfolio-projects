@@ -1,13 +1,3 @@
-# Programmers: Colten, Westley
-# Course:  CS151, Dr. Isaacman
-# Due Date: 11/ 12/ 2025
-# Lab Assignment: Lab 11
-# Problem Statement: Convert morse code to english
-# Data In: Morse code, Morse code translation
-# Data Out: English translation
-# Credits: N/A
-# Input Files: Morse code to English translation, Morse code to translate
-
 import os
 
 
