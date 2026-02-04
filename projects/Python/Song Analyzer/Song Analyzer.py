@@ -2,9 +2,6 @@ import os
 import string
 
 
-# Purpose: gets a file name that exists from the user
-# Parameters: None
-# Return: the file name
 def get_valid_file():
     # gets file name
     valid_file = input("Please enter a file to use: ").strip().lower()
@@ -17,9 +14,6 @@ def get_valid_file():
     return valid_file
 
 
-# Purpose: reads a file
-# Parameters: file name
-# Return: the data within the file. Returns False if the file doesn't exist
 def read_file(file_name):
     data = []
     # if file exists, open the file
@@ -40,9 +34,6 @@ def read_file(file_name):
         return False
 
 
-# Purpose: searches how many times a word/phrase appears
-# Parameters: string to search for, nested list to search in
-# Return: number of times the word/phrase appears
 def search(string_in, nested_list):
     count = 0
     string_in = string_in.strip().lower()
@@ -58,9 +49,6 @@ def search(string_in, nested_list):
     return count
 
 
-# Purpose: gets the average number of characters in each song
-# Parameters: the nested list to search in
-# Return: the average number of characters
 def average_song_characters(nested_list):
     char_count = 0
     checked = 0
@@ -74,9 +62,6 @@ def average_song_characters(nested_list):
     return char_count/checked
 
 
-# Purpose: export all songs that contain a certain string
-# Parameters: string to search for, nested list to look in, name of new file
-# Return: None
 def filter_and_export(string_in, nested_list, file_name):
     found = []
 
@@ -91,9 +76,6 @@ def filter_and_export(string_in, nested_list, file_name):
     outfile.close()
 
 
-# Purpose: finds the longest song name
-# Parameters: nested list to look in
-# Return: the longest song name
 def find_longest(nested_list):
     longest = nested_list[0][1]
 
@@ -104,9 +86,6 @@ def find_longest(nested_list):
     return longest
 
 
-# Purpose: finds all songs by a certain artist
-# Parameters: nested list to look in, artist name
-# Return: list of songs
 def find_songs_by_artist(nested_list, artist):
     songs = []
     # searches each item for the artist and appends
@@ -116,9 +95,6 @@ def find_songs_by_artist(nested_list, artist):
     return songs
 
 
-# Purpose: print out menu
-# Parameters: None
-# Return: None
 def print_menu():
     print("\n---------------- MENU -----------------")
     print("1. Search by word or phrase")
@@ -131,9 +107,6 @@ def print_menu():
     print("-----------------------------------------")
 
 
-# Purpose: gets an integer of 1-7 from user
-# Parameters: None
-# Return: valid integer
 def get_menu_choice():
     choice = input("Please enter your choice: ").strip().lower()
     while not (choice.isdigit() and 1 <= int(choice) <= 7):
@@ -142,9 +115,6 @@ def get_menu_choice():
     return choice
 
 
-# Purpose: Calls all functions
-# Parameters: None
-# Return: None
 def main():
     # introduction
     print("Welcome to Song Analyzer")
