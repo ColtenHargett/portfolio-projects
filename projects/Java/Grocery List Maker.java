@@ -1,14 +1,3 @@
-//Programmers: Grace Webster and Colten Hargett
-//Course:  CS212
-//Due Date: 1/26/2026
-//Lab Assignment: 0
-//Problem Statement: To work with variables and user input by printing out the list of items and the cost
-//Data In: quantity of each item, customer's budget
-//Data Out:  The total cost of the groceries
-//Credits: Nope
-
-//GreyhoundGrocers.java
-//import Scanner class to use input methods
 import java.util.Scanner;
 
 public class GreyhoundGrocers {
