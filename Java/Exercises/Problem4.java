@@ -1,3 +1,7 @@
+/*
+Write a program that prints a 7x7 multiplication table.
+*/
+
 import java.util.Scanner;
 
 public class Problem4 {
