@@ -1,3 +1,11 @@
+/*
+Task:
+write a program that prints numbers from 1 to 50. But:
+For multiples of 4, print "Buzz" instead of the number
+For multiples of 7, print "Fizz" instead of the number
+For multiples of both 4 and 7, print "BuzzFizz"
+*/
+
 import java.util.Scanner;
 
 public class Problem1 {
