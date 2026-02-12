@@ -110,7 +110,7 @@ public class PersonalityTest {
             System.out.println("----------------------------");
         }
 
-        // tiebreaker logic
+        // personality logic
         String result = "The Leader";
         int highest = leader;
 
