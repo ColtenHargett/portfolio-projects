@@ -1,3 +1,10 @@
+/*
+Task:
+Write a program that asks the user to enter numbers (one at a time). Keep asking until they enter -1 to stop. Then print:
+The sum of all even numbers entered
+How many even numbers were entered
+*/
+
 import java.util.Scanner;
 
 public class Problem6 {
