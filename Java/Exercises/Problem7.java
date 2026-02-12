@@ -1,3 +1,11 @@
+/*
+Task:
+Write a program that prints a 5x5 grid of numbers. The rules:
+If row number equals column number, print X
+If the sum of row + column is even, print E
+Otherwise, print O
+*/
+
 import java.util.Scanner;
 
 public class Problem7 {
