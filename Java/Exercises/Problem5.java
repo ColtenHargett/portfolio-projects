@@ -1,3 +1,8 @@
+/*
+Task:
+Write a program that prints a pyramid of stars with 6 rows.
+*/
+
 import java.util.Scanner;
 
 public class Problem5 {
