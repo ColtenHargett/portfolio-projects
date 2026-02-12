@@ -1,3 +1,10 @@
+/*
+Task:
+Write a program that asks the user to enter a password. Keep asking until they enter a valid password. A valid password must:
+Be at least 8 characters long
+Contain the word "java" (case-insensitive)
+*/
+
 import java.util.Scanner;
 
 public class Problem3 {
