@@ -1,3 +1,11 @@
+/*
+Task:
+Write a program where the computer picks a random number between 1 and 20. The user keeps guessing until they get it right. After each guess, tell them:
+"Too high!" if their guess is higher
+"Too low!" if their guess is lower
+"Correct! You got it in X tries!" when they guess right
+*/
+
 import java.util.Scanner;
 import java.util.Random;
 
