@@ -23,7 +23,7 @@ def fetch_stock_data(ticker: str, period: str = "10y"):
         else:
             cleaned_columns.append(str(col).strip().lower().replace(" ", "_"))
 
-    #
+    # impliment cleaned columns
     df.columns = cleaned_columns
     print("Cleaned columns:", df.columns.tolist())
 
@@ -31,7 +31,7 @@ def fetch_stock_data(ticker: str, period: str = "10y"):
     return df
 
 
-# downloads stock data for a list of symbols
+# downloads stock data
 def fetch_and_save_stocks(symbols, output_dir="data/raw", period="10y"):
     # creates directory
     output_path = Path(output_dir)
