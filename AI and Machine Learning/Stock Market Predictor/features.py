@@ -32,10 +32,10 @@ def add_features(df: pd.DataFrame) -> pd.DataFrame:
     df["return_5"] = df["close"].pct_change(5)
     df["return_10"] = df["close"].pct_change(10)
 
-    # target: tomorrow's high compared to today's close
+    # tomorrow's high compared to today's close
     df["target_next_high_pct"] = (df["high"].shift(-1) - df["close"]) / df["close"]
 
-    # remove rows with missing values caused by rolling calculations
+    # remove rows with missing
     df.dropna(inplace=True)
 
     return df
