@@ -6,19 +6,19 @@ NASDAQ_LISTED_URL = "https://www.nasdaqtrader.com/dynamic/symdir/nasdaqlisted.tx
 OTHER_LISTED_URL = "https://www.nasdaqtrader.com/dynamic/symdir/otherlisted.txt"
 
 
-# returns the whole stock market listing
+# returns the listing
 def get_listing(url: str, timeout: int = 30):
     # pulls the url data
     req = requests.get(url, timeout=timeout)
-    # checks status before continuing
+    # checks status
     req.raise_for_status()
     # returns the text as a string
     return req.text
 
 
-# creates table from the listing
+# creates table
 def read_delimited_pipeline(text: str):
-    # creates a csv from text
+    # creates a csv
     data_frame = pd.read_csv(io.StringIO(text), sep="|", dtype=str)
 
     # cleans the data frame
@@ -34,7 +34,7 @@ def read_delimited_pipeline(text: str):
 def load_nasdaq_list():
     keep = ["Symbol", "Security Name", "Test Issue", "ETF"]
 
-    # get text from listing and make data frame
+    # make data frame
     text = get_listing(NASDAQ_LISTED_URL)
     df = read_delimited_pipeline(text)
 
