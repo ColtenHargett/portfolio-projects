@@ -1,3 +1,4 @@
+import os
 import requests
 import pandas as pd
 import io
@@ -105,7 +106,9 @@ def main():
     df = build_universe(exclude_etfs=True, exclude_test_issues=True)
     print(df.head(10))
     print("count:", len(df))
-    df.to_csv("/Users/colten/PycharmProjects/StockMarketPredictor/data/us_equities.csv", index=False)
+    # save next to the other data files (fetch_data.py reads it from here)
+    os.makedirs("data", exist_ok=True)
+    df.to_csv("data/us_equities.csv", index=False)
     print("Universe created")
 
 

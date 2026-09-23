@@ -1,0 +1,20 @@
+# secrets: keep API keys and passwords out of the repo
+.env
+.env.*
+!.env.example
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# generated data
+chroma_db/
+AI and Machine Learning/News Summary Agent/Data/
+AI and Machine Learning/Stock Market Predictor/data/
+
+# editors / OS
+.idea/
+.vscode/
+.DS_Store
