@@ -1,3 +1,5 @@
+import os
+import sys
 import time
 from datetime import datetime
 import subprocess
@@ -6,18 +8,21 @@ import subprocess
 TARGET_HOUR = 23
 TARGET_MINUTE = 57
 
-# Path to scripts
-SCRAPER_PATH = "/Users/colten/PycharmProjects/News Agent/Scraper.py"
-DB_PATH = "/Users/colten/PycharmProjects/News Agent/Database_Builder.py"
-AGENT_PATH = "/Users/colten/PycharmProjects/News Agent/Agent.py"
-VENV_PYTHON = "/Users/colten/PycharmProjects/News Agent/.venv/bin/python"
+# Path to scripts (found relative to this file so it runs on any machine)
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRAPER_PATH = os.path.join(SCRIPT_DIR, "Scraper.py")
+DB_PATH = os.path.join(SCRIPT_DIR, "Database_Builder.py")
+AGENT_PATH = os.path.join(SCRIPT_DIR, "Agent.py")
+
+# Use the same Python that is running the scheduler (e.g. the project's virtual env)
+VENV_PYTHON = sys.executable
 
 def run_pipeline():
     print("Running daily news pipeline...")
 
-    subprocess.run([VENV_PYTHON, SCRAPER_PATH])
-    subprocess.run([VENV_PYTHON, DB_PATH])
-    subprocess.run([VENV_PYTHON, AGENT_PATH])
+    subprocess.run([VENV_PYTHON, SCRAPER_PATH], cwd=SCRIPT_DIR)
+    subprocess.run([VENV_PYTHON, DB_PATH], cwd=SCRIPT_DIR)
+    subprocess.run([VENV_PYTHON, AGENT_PATH], cwd=SCRIPT_DIR)
 
     print("Pipeline finished.")
 
