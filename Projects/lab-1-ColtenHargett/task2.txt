@@ -1,55 +1,0 @@
-Script started on 2026-01-29 00:39:35-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
-[?2004hchargett@moria:~/lab-1-ColtenHargett$ cd
-[?2004l[?2004hchargett@moria:~$ mkdir cs266
-[?2004l[?2004hchargett@moria:~$ cd cs266
-[?2004l[?2004hchargett@moria:~/cs266$ mkdir lab0
-[?2004l[?2004hchargett@moria:~/cs266$ mkdir lab1
-[?2004l[?2004hchargett@moria:~/cs266$ mkdir tmp
-[?2004l[?2004hchargett@moria:~/cs266$ ls
-[?2004llab0  lab1  tmp
-[?2004hchargett@moria:~/cs266$ cd lab0
-[?2004l[?2004hchargett@moria:~/cs266/lab0$ touch bar
-[?2004l[?2004hchargett@moria:~/cs266/lab0$ touch foo
-[?2004l[?2004hchargett@moria:~/cs266/lab0$ touch thisfilenameisveryverylong
-[?2004l[?2004hchargett@moria:~/cs266/lab0$ ls
-[?2004lbar  foo  thisfilenameisveryverylong
-[?2004hchargett@moria:~/cs266/lab0$ cs.[K ..[K[K[K[Kd ..
-[?2004l[?2004hchargett@moria:~/cs266$ ls
-[?2004llab0  lab1  tmp
-[?2004hchargett@moria:~/cs266$ k[Kmkdir backup
-[?2004l[?2004hchargett@moria:~/cs266$ lab[K[K[Kcs la[K[K[K[Kd lab0
-[?2004l[?2004hchargett@moria:~/cs266/lab0$ cp foo ~/cs266/backup/
-[?2004l[?2004hchargett@moria:~/cs266/lab0$ cs[Kd ..
-[?2004l[?2004hchargett@moria:~/cs266$ ls
-[?2004lbackup	lab0  lab1  tmp
-[?2004hchargett@moria:~/cs266$ bac[K[K[Kcd backup
-[?2004l[?2004hchargett@moria:~/cs266/backup$ ls
-[?2004lfoo
-[?2004hchargett@moria:~/cs266/backup$ cd ..
-[?2004l[?2004hchargett@moria:~/cs266$ rm -r backup
-[?2004l[?2004hchargett@moria:~/cs266$ ls
-[?2004llab0  lab1  tmp
-[?2004hchargett@moria:~/cs266$ cs lab0
-[?2004lCommand 'cs' not found, but can be installed with:
-apt install csound
-Please ask your administrator.
-[?2004hchargett@moria:~/cs266$ cd lab0
-[?2004l[?2004hchargett@moria:~/cs266/lab0$ ls
-[?2004lbar  foo  thisfilenameisveryverylong
-[?2004hchargett@moria:~/cs266/lab0$ mc[Kv thisfilenameisveryverylong ~/cs266/tmp/
-[?2004l[?2004hchargett@moria:~/cs266/lab0$ cs[Kd
-[?2004l[?2004hchargett@moria:~$ [7mls -R cs266[27mls -R cs266
-[?2004lcs266:
-lab0  lab1  tmp
-
-cs266/lab0:
-bar  foo
-
-cs266/lab1:
-
-cs266/tmp:
-thisfilenameisveryverylong
-[?2004hchargett@moria:~$ exit
-[?2004lexit
-
-Script done on 2026-01-29 00:43:46-05:00 [COMMAND_EXIT_CODE="0"]

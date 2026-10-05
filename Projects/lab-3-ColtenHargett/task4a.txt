@@ -1,10 +1,0 @@
-Script started on 2026-02-11 13:31:10-05:00 [TERM="xterm-256color" TTY="/dev/pts/13" COLUMNS="124" LINES="37"]
-[?2004hchargett@moria:~/lab-3-ColtenHargett$ screen -ls
-[?2004lThere are screens on:
-	720879.beta	(02/11/2026 01:31:00 PM)	(Detached)
-	720872.alpha	(02/11/2026 01:30:49 PM)	(Detached)
-2 Sockets in /run/screen/S-chargett.
-[?2004hchargett@moria:~/lab-3-ColtenHargett$ exit
-[?2004lexit
-
-Script done on 2026-02-11 13:31:53-05:00 [COMMAND_EXIT_CODE="0"]
