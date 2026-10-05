@@ -1,0 +1,12 @@
+schema: "classroom50/repo-config/v1"
+classroom: "hbui-cs312-f26"
+assignment: "lab0"
+owner:
+  username: "ColtenHargett"
+  id: 230263284
+  accepted_at: "2026-09-01T13:48:27Z"
+source:
+  owner: "hbui-cs312-f26"
+  owner_id: 317684957
+  repo: "lab00-template"
+  branch: "main"
