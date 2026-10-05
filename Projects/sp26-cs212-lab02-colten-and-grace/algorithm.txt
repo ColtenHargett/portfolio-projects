@@ -1,0 +1,54 @@
+1. print out a description of the program
+2. ask for the user's name
+3. print a welcome message
+4. Set the balance to 212.90
+5. Set depositTotal to 0.0
+6. Set withdrawTotal to 0.0
+7. Initialize choice as an int
+8. Begin do-while loop which will repeat until the choice equal 4
+    a. display menu
+        1. deposit
+        2. withdrawal
+        3. balance
+        4. exit
+    b. prompt user for their choice and store it in choice
+
+    c. start a switch statment with choice
+    d. case 1 when choice is 1
+        i. ask user for how much money they want to deposit
+        ii. while deposit is less than 0
+            a. show user invalid input please enter a dollar amount.
+            b. ask user for how much money they want to deposit
+        iii. balance += deposit
+        iv. depositTotal += deposit
+        v. output to user their new balance
+        vi. break
+
+    e. case 2 when choice is 2
+        i. ask user for how much money they want to withdrawal
+        ii. while withdrawal is less than 0
+            a. show user invalid input please enter a dollar amount.
+            b. ask user for how much money they want to withdrawal
+        iii. if withdrawal <= balance
+            a. balance -= withdrawal;
+            b. withdrawTotal += withdrawal
+            c. output "withdrawal successful. new balance:"
+             else
+            a. output :insufficient funds. withdrawal denied"
+        iv. break
+
+    f. case 3 when choice is 3
+        i. print to user balance
+        ii. break
+
+    g. case 4 when choice is 4
+        i. break
+    
+    h. default
+        i. output to user "invalid choice. please select 1, 2, 3, or 4."
+        ii. break
+
+9. output to user their transation summary
+10. output to user a thank you message and ask for either a reciept or a confirmation email
+
+

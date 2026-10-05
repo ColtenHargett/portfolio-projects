@@ -1,0 +1,12 @@
+schema: "classroom50/repo-config/v1"
+classroom: "hbui-cs312-f26"
+assignment: "pa2"
+owner:
+  username: "ColtenHargett"
+  id: 230263284
+  accepted_at: "2026-09-21T19:34:52Z"
+source:
+  owner: "hbui-cs312-f26"
+  owner_id: 317684957
+  repo: "pa2-template"
+  branch: "main"

@@ -1,0 +1,10 @@
+Script started on 2026-02-05 13:22:06-05:00 [TERM="xterm-256color" TTY="/dev/pts/21" COLUMNS="149" LINES="46"]
+[?2004hchargett@moria:~/lab-3-ColtenHargett$ ex[K[Kexport fruit=""m"a"n"g"o"[C
+[?2004l[?2004hchargett@moria:~/lab-3-ColtenHargett$ echo $fruit 
+[?2004lmango
+[?2004hchargett@moria:~/lab-3-ColtenHargett$ [7mexport PS1='\u \w > '[27mexport PS1='\u \w > '[C[K[K"[1P[1@"
+[?2004l[?2004hchargett ~/lab-3-ColtenHargett >export PS1="\u \w >" "[C
+[?2004l[?2004hchargett ~/lab-3-ColtenHargett > exit
+[?2004lexit
+
+Script done on 2026-02-05 13:25:40-05:00 [COMMAND_EXIT_CODE="0"]

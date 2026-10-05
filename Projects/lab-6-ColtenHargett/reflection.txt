@@ -1,0 +1,15 @@
+What I found easy about this lab was making and calling functions once I understood the ins and 
+outs of functions in Bash. Arrays were also pretty straightforward as I could use my understanding 
+of other programming languages. After grasping the  syntax for getting elements and looping through
+them, it become pretty easy.
+
+What I found difficult was remembering the exact Bash syntax, especially with quotes, array
+formatting, and using shift correctly. Bash is a less readable and more strict than Java or Python,
+so small mistakes can break the script.
+
+Arrays could be useful in scripts whenever I need to store a list of items. They make it easier
+to loop through a group of values instead of writing everything out manually.
+
+There are functions I might alias in my .bash_profile if I use them a lot. For example, 
+I could alias a function for connecting to a potterbox with ssh, moving to a specific directory, 
+or running a bunch of commands that I use often.

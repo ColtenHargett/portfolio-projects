@@ -1,0 +1,42 @@
+Script started on 2026-02-04 22:45:30-05:00 [TERM="xterm-256color" TTY="/dev/pts/13" COLUMNS="124" LINES="37"]
+[?2004hchargett@moria:~$ alias ll='ls-[K -las[Kh'
+[?2004l[?2004hchargett@moria:~$ li[K[Kalias rm="[K''r'm' '-'i'[C
+[?2004l[?2004hchargett@moria:~$ alias gst="[K''g'i't' 's't'a't'u's' '[1P'
+[?2004l[?2004hchargett@moria:~$ alias cls=''c'l'e'a'r' '[1P'
+[?2004l[?2004hchargett@moria:~$ ll
+[?2004ltotal 74K
+drwxr-xr-x 10 chargett chargett   20 Feb  4 22:45 .
+drwxr-xr-x  9 root     root        0 Feb  4 22:36 ..
+-rw-------  1 chargett chargett 3.6K Feb  4 22:42 .bash_history
+-rw-rw-r--  1 chargett chargett   79 Jan 29 13:11 .bash_profile
+drwx------  3 chargett chargett    4 Jan 22 13:11 .cache
+drwx------  3 chargett chargett    3 Jan 22 13:11 .config
+drwxrwxr-x  5 chargett chargett    5 Jan 29 00:42 cs266
+drwxrwxr-x  3 chargett chargett   15 Jan 29 00:47 lab-1-ColtenHargett
+-rw-------  1 chargett chargett   20 Jan 29 12:30 .lesshst
+drwx------  4 chargett chargett    4 Jan 29 12:53 .local
+drwx------  3 chargett chargett    3 Jan 22 13:11 .nv
+lrwxrwxrwx  1 chargett chargett   12 Jan 29 13:22 otherfile.txt -> testfile.txt
+-rw-r--r--  1 chargett chargett  12K Jan 22 13:23 .partOne.txt.swp
+drwx------  4 chargett chargett    4 Jan 29 12:27 snap
+drwx------  2 chargett chargett    6 Jan 29 00:17 .ssh
+-rw-rw-r--  1 chargett chargett  24K Feb  4 22:45 task1.txt
+-rw-rw-r--  1 chargett chargett    0 Feb  4 22:45 task2.txt
+-rw-rw-r--  1 chargett chargett    6 Jan 29 13:23 testfile.txt
+-rw-------  1 chargett chargett 8.5K Feb  4 22:45 .viminfo
+-rw-rw-r--  1 chargett chargett   51 Feb  4 22:40 vim_practice.txt
+[?2004hchargett@moria:~$ rm testfile.txt 
+[?2004lrm: remove regular file 'testfile.txt'? y
+[?2004hchargett@moria:~$ gst
+[?2004lfatal: not a git repository (or any parent up to mount point /home)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+[?2004hchargett@moria:~$ cls
+[?2004l[H[2J[3J[?2004hchargett@moria:~$ alioas[K[K[Kas
+[?2004lalias cls='clear'
+alias gst='git status'
+alias ll='ls -lah'
+alias rm='rm -i'
+[?2004hchargett@moria:~$ exit
+[?2004lexit
+
+Script done on 2026-02-04 22:49:13-05:00 [COMMAND_EXIT_CODE="127"]

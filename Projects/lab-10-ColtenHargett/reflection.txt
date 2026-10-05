@@ -1,0 +1,11 @@
+In this lab, the easiest part was doing the more basic sed commands like deleting lines and replacing words. 
+Once I understood the general format of sed, those commands were pretty straightforward. The hardest part 
+was using regular expressions for more complicated patterns, like trying to make sure I matched the correct 
+text without affecting anything else in the file. Task 3 was probably the most difficult because I had to 
+think carefully about how to capture different parts of the phone number and then put them back in the correct
+format.The sed actions that seem most useful to me are substitution and deletion. I can see both of these 
+being used often when cleaning up files. Some of the commands on the notes sheet could mimic the behavior of 
+other commands. Sed could mimic cat by simply printing the whole file. It could mimic tr in some situations 
+by replacing characters or patterns with substitution commands. It could mimic grep by printing only lines 
+that match a pattern. In the future, I could use sed when working with log files, scripts, configuration 
+files, or data that needs to be cleaned up quickly.

@@ -1,0 +1,33 @@
+
+## Task : Function Call from Command Line  
+
+#### Subtask : Functions in `.bash_profile` 
+
+1. Open your `.bash_profile`in vim 
+ 
+   ```
+   vim ~/.bash_profile
+   ```
+2. Add a function named `today` that prints the current date.  
+
+3. Like the example we discussed in class, include the day name, date, month, and year.
+
+3. Save and reload the profile:  
+
+   ```
+   source ~/.bash_profile
+   ```
+
+4. Call the function from the terminal:  
+
+   ```
+   today
+   ```
+
+**Example Expected Output:**  
+
+```
+Tue Feb 20 14:32:19 UTC 2025
+```
+
+---

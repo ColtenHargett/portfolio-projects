@@ -1,0 +1,15 @@
+#A good algorithm should work for any programming language. You should not have a step saying to create an object of the NumberFormat class ...
+#It should just be: print out the number in the required format, a single digit number will have a leading 0.
+
+1. print out a description of the program
+2. ask for the player's name, and store it in a string
+3. loop 8 times (8 tickets)
+    1. loop 6 times (6 numbers)
+        1. Generate a random number from 1 to 69 inclusive
+        2. If the random number is less than 10
+            1. Print random number with leading 0
+        3. Otherwise
+            1. Print the random number
+4. Print a good luck message
+5. Print the estimated jackpot
+

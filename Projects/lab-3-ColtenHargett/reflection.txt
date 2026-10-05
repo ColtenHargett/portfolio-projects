@@ -1,0 +1,16 @@
+What was your favorite part of this lab?
+I really enjoyed making a script within the bash terminal. I had no idea that something
+like that was even possible in the terminal. It adds a lot of depth to the terminal and
+expands what is possible.
+
+What part of this lab did you struggle with the most?
+I also struggled with making the script as I had to do some research on the proper syntax
+of linux. Although I am not sure I did everything correctly, I enjoyed making a script.
+
+Do you feel you have a decent handle on git and how to resolve merge conflicts?
+I think I have a decent feel for git. I think I just need more practice using
+it through the terminal in order to feel very comfortable with it.
+
+What sorts of tasks might you want to write scripts to do for you?
+You could write scripts to edit a batch of files, renaming a bunch of 
+files, or moving files of a certain type.

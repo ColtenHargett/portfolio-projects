@@ -1,0 +1,6 @@
+The command I found most useful was grep because its very easy to search through files and find specific 
+items quickly. I also liked how many options there are such as -i and -v. The most challenging part of 
+the lab was building the pipeline for task 4 and remembering the correct order of operations for each command. 
+These commands can be used in automation because they process large amounts of text without manual work. 
+For example, they could be used in scripts to search log files for errors, clean up data, or generate reports 
+from text files automatically.

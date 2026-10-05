@@ -1,0 +1,26 @@
+Note: N is: 60000
+
+N:
+Merge sort() took 7.240792 ms
+Selection sort() took 1027.661917 ms
+Insertion sort() took 498.193583 ms
+
+2N:
+Merge sort() took 14.392708 ms
+Selection sort() took 4042.085084 ms
+Insertion sort() took 1958.509458 ms
+
+4N:
+Merge sort() took 25.983792 ms
+Selection sort() took 16108.28825 ms
+Insertion sort() took 7995.550375 ms
+
+6N:
+Merge sort() took 35.818792 ms
+Selection sort() took 36378.213917 ms
+Insertion sort() took 17838.222458 ms
+
+8N:
+Merge sort() took 47.632166 ms
+Selection sort() took 64879.71675 ms
+Insertion sort() took 31807.887875 ms

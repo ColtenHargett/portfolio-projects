@@ -1,0 +1,57 @@
+Script started on 2026-01-29 00:47:08-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004hchargett@moria:~/lab-1-ColtenHargett$ touch hidden.txt
+[?2004l[?2004hchargett@moria:~/lab-1-ColtenHargett$ touch everyone.txt
+[?2004l[?2004hchargett@moria:~/lab-1-ColtenHargett$ touch extra.txt
+[?2004l[?2004hchargett@moria:~/lab-1-ColtenHargett$ ls -l
+[?2004ltotal 102
+-rw-rw-r-- 1 chargett chargett     0 Jan 29 00:47 everyone.txt
+-rw-rw-r-- 1 chargett chargett     0 Jan 29 00:47 extra.txt
+-rw-rw-r-- 1 chargett chargett     0 Jan 29 00:47 hidden.txt
+-rw-rw-r-- 1 chargett chargett 37634 Jan 29 00:17 lab-directory.png
+-rw-rw-r-- 1 chargett chargett   366 Jan 29 00:17 lyric.txt
+-rw-rw-r-- 1 chargett chargett  3024 Jan 29 00:17 README.md
+-rw-rw-r-- 1 chargett chargett    31 Jan 29 00:17 runme.sh
+-rw-rw-r-- 1 chargett chargett  1527 Jan 29 00:17 SCRIPT.md
+-rw-rw-r-- 1 chargett chargett   891 Jan 29 00:18 task1.txt
+-rw-rw-r-- 1 chargett chargett  2332 Jan 29 00:43 task2.txt
+-rw-rw-r-- 1 chargett chargett  1263 Jan 29 00:46 task3.txt
+-rw-rw-r-- 1 chargett chargett     0 Jan 29 00:47 task4.txt
+[?2004hchargett@moria:~/lab-1-ColtenHargett$ ch[K[K[7mchmod o+w everyone.txt extra.txt[27mchmod o+w everyone.txt extra.txt
+[?2004l[?2004hchargett@moria:~/lab-1-ColtenHargett$ ls -l
+[?2004ltotal 102
+-rw-rw-rw- 1 chargett chargett     0 Jan 29 00:47 everyone.txt
+-rw-rw-rw- 1 chargett chargett     0 Jan 29 00:47 extra.txt
+-rw-rw-r-- 1 chargett chargett     0 Jan 29 00:47 hidden.txt
+-rw-rw-r-- 1 chargett chargett 37634 Jan 29 00:17 lab-directory.png
+-rw-rw-r-- 1 chargett chargett   366 Jan 29 00:17 lyric.txt
+-rw-rw-r-- 1 chargett chargett  3024 Jan 29 00:17 README.md
+-rw-rw-r-- 1 chargett chargett    31 Jan 29 00:17 runme.sh
+-rw-rw-r-- 1 chargett chargett  1527 Jan 29 00:17 SCRIPT.md
+-rw-rw-r-- 1 chargett chargett   891 Jan 29 00:18 task1.txt
+-rw-rw-r-- 1 chargett chargett  2332 Jan 29 00:43 task2.txt
+-rw-rw-r-- 1 chargett chargett  1263 Jan 29 00:46 task3.txt
+-rw-rw-r-- 1 chargett chargett     0 Jan 29 00:47 task4.txt
+[?2004hchargett@moria:~/lab-1-ColtenHargett$ [7mchmod 600 hidden.txt[27mchmod 600 hidden.txt
+[?2004l[?2004hchargett@moria:~/lab-1-ColtenHargett$ ls-[K -l
+[?2004ltotal 102
+-rw-rw-rw- 1 chargett chargett     0 Jan 29 00:47 everyone.txt
+-rw-rw-rw- 1 chargett chargett     0 Jan 29 00:47 extra.txt
+-rw------- 1 chargett chargett     0 Jan 29 00:47 hidden.txt
+-rw-rw-r-- 1 chargett chargett 37634 Jan 29 00:17 lab-directory.png
+-rw-rw-r-- 1 chargett chargett   366 Jan 29 00:17 lyric.txt
+-rw-rw-r-- 1 chargett chargett  3024 Jan 29 00:17 README.md
+-rw-rw-r-- 1 chargett chargett    31 Jan 29 00:17 runme.sh
+-rw-rw-r-- 1 chargett chargett  1527 Jan 29 00:17 SCRIPT.md
+-rw-rw-r-- 1 chargett chargett   891 Jan 29 00:18 task1.txt
+-rw-rw-r-- 1 chargett chargett  2332 Jan 29 00:43 task2.txt
+-rw-rw-r-- 1 chargett chargett  1263 Jan 29 00:46 task3.txt
+-rw-rw-r-- 1 chargett chargett     0 Jan 29 00:47 task4.txt
+[?2004hchargett@moria:~/lab-1-ColtenHargett$ [7m./runme.sh[27m./runme.sh
+[?2004lbash: ./runme.sh: Permission denied
+[?2004hchargett@moria:~/lab-1-ColtenHargett$ [7mchmod u+x runme.sh[27mchmod u+x runme.sh
+[?2004l[?2004hchargett@moria:~/lab-1-ColtenHargett$ chmod u+x runme.sh[Kchmod u+x runme.sh[8P./runme.sh
+[?2004lHello World
+[?2004hchargett@moria:~/lab-1-ColtenHargett$ exit
+[?2004lexit
+
+Script done on 2026-01-29 00:50:41-05:00 [COMMAND_EXIT_CODE="0"]

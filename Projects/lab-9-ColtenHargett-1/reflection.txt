@@ -1,0 +1,6 @@
+I feel better better about using regular expressions after this lab, but they are still something
+I need more practice with. When I can understand what each part is doing it makes it easier, but 
+writing them from scratch can still be a little confusing at times. The expressions I find most useful arethe ones that match patterns. I also think that backreferences are interesting too, but they are a 
+little challenging. The easiest task was probably Task 3 because it was more straightforward, and the
+hardest was Task 2 because the palindrome pattern was difficult to think through. The hint did help me.
+I do not think it made Task 2 too easy, but it pointed me in the right direction which was helpful.

@@ -1,0 +1,27 @@
+Script started on 2026-01-29 00:44:04-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004hchargett@moria:~/lab-1-ColtenHargett$ cat lyric.txt 
+[?2004lWe'll fight fight fight for the glory
+And we'll howl howl for the hounds
+And we'll scream and scream
+'Till we're gray and green
+And we'll howl howl for the hounds
+And our passion will help to unite us
+As they have since 1852
+And we'll fight fight fight
+'Till the end of the night
+And we'll howl howl for the hounds
+L-O-Y-O-L-A
+Hounds! Hounds! Hounds! Hounds! Hounds![?2004hchargett@moria:~/lab-1-ColtenHargett$ wc [K[K[K wc -r[Kc [K[K[K[K[K[K[Kc[K cla[Kear
+[?2004l[H[2J[3J[?2004hchargett@moria:~/lab-1-ColtenHargett$ wc -c[Kw lyric.txt 
+[?2004l68 lyric.txt
+[?2004hchargett@moria:~/lab-1-ColtenHargett$ head -3 lyric.txt 
+[?2004lWe'll fight fight fight for the glory
+And we'll howl howl for the hounds
+And we'll scream and scream
+[?2004hchargett@moria:~/lab-1-ColtenHargett$ tail -3 lyric.txt 
+[?2004lAnd we'll howl howl for the hounds
+L-O-Y-O-L-A
+Hounds! Hounds! Hounds! Hounds! Hounds![?2004hchargett@moria:~/lab-1-ColtenHargett$ exit
+[?2004lexit
+
+Script done on 2026-01-29 00:46:54-05:00 [COMMAND_EXIT_CODE="0"]

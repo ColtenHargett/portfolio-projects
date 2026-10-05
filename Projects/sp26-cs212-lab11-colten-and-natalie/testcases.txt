@@ -1,0 +1,54 @@
+Test Case 1
+Description: Add one ingredient.
+Input:
+1
+Turkey
+3
+0
+Expected Output:
+Turkey is added to the sandwich.
+The sandwich displays:
+Turkey
+
+
+Test Case 2
+Description: Add multiple ingredients.
+Input:
+1
+Bread
+1
+Ham
+1
+Cheese
+3
+0
+Expected Output:
+The sandwich displays:
+Cheese
+Ham
+Bread
+
+
+Test Case 3
+Description: Remove the top ingredient.
+Input:
+1
+Lettuce
+1
+Tomato
+2
+3
+0
+Output:
+Removed: Tomato
+The sandwich displays:
+Lettuce
+
+
+Test Case 4
+Description: Try to remove an ingredient from an empty sandwich.
+Input:
+2
+0
+Output:
+There is nothing on the sandwich to remove.

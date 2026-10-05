@@ -1,0 +1,19 @@
+Script started on 2026-02-05 13:27:49-05:00 [TERM="xterm-256color" TTY="/dev/pts/21" COLUMNS="149" LINES="46"]
+[?2004hchargett@moria:~/lab-3-ColtenHargett$ [7mtar -xzf animals.tgz[27mtar -xzf animals.tgz
+[?2004l[?2004hchargett@moria:~/lab-3-ColtenHargett$ ls
+[?2004lAardvark   Alligator	Antelope   Dolphin  Eel       Emu	      Kangaroo	Lion	 README.md  task3.txt
+Albatross  animals.tgz	Armadillo  Eagle    Elephant  Information.md  Koala	Penguin  task2.txt  Tiger
+[?2004hchargett@moria:~/lab-3-ColtenHargett$ [7mtar -czf A.tgz A*[27mtar -czf A.tgz A*
+[?2004l[?2004hchargett@moria:~/lab-3-ColtenHargett$ ls
+[?2004lAardvark   Alligator	Antelope   A.tgz    Eagle  Elephant  Information.md  Koala  Penguin    task2.txt  Tiger
+Albatross  animals.tgz	Armadillo  Dolphin  Eel    Emu	     Kangaroo	     Lion   README.md  task3.txt
+[?2004hchargett@moria:~/lab-3-ColtenHargett$ [7mtar -tzf A.tgz[27mtar -tzf A.tgz
+[?2004lAardvark
+Albatross
+Alligator
+Antelope
+Armadillo
+[?2004hchargett@moria:~/lab-3-ColtenHargett$ exit
+[?2004lexit
+
+Script done on 2026-02-05 13:30:16-05:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,135 @@
+Patrick Mahomes,QB,27.1
+Josh Allen,QB,26.4
+Jalen Hurts,QB,24.8
+Joe Burrow,QB,23.9
+Lamar Jackson,QB,25.2
+Justin Herbert,QB,22.7
+Trevor Lawrence,QB,21.5
+Dak Prescott,QB,22.1
+Tua Tagovailoa,QB,23.3
+Kirk Cousins,QB,21.9
+Aaron Rodgers,QB,20.8
+Russell Wilson,QB,19.7
+Jared Goff,QB,21.3
+Geno Smith,QB,20.5
+Deshaun Watson,QB,19.9
+Brock Purdy,QB,21.0
+Kyler Murray,QB,22.3
+Matthew Stafford,QB,20.2
+Daniel Jones,QB,18.7
+Mac Jones,QB,16.9
+Sam Howell,QB,18.3
+Jordan Love,QB,19.5
+Derek Carr,QB,20.1
+Baker Mayfield,QB,19.0
+Jimmy Garoppolo,QB,18.8
+Christian McCaffrey,RB,20.4
+Austin Ekeler,RB,19.6
+Saquon Barkley,RB,18.9
+Derrick Henry,RB,18.3
+Nick Chubb,RB,17.8
+Josh Jacobs,RB,17.5
+Jonathan Taylor,RB,19.2
+Tony Pollard,RB,16.9
+Alvin Kamara,RB,17.2
+Joe Mixon,RB,16.5
+Aaron Jones,RB,15.8
+Najee Harris,RB,14.9
+Travis Etienne,RB,15.6
+Rhamondre Stevenson,RB,14.7
+Breece Hall,RB,16.2
+Jahmyr Gibbs,RB,15.4
+Isiah Pacheco,RB,14.3
+Kenneth Walker,RB,15.1
+James Conner,RB,13.9
+David Montgomery,RB,14.6
+D'Andre Swift,RB,14.1
+Miles Sanders,RB,13.5
+Brian Robinson,RB,13.2
+Cam Akers,RB,12.8
+Alexander Mattison,RB,13.0
+Zach Charbonnet,RB,12.6
+AJ Dillon,RB,11.9
+Khalil Herbert,RB,12.4
+Roschon Johnson,RB,11.8
+Tyler Allgeier,RB,12.2
+Justin Jefferson,WR,18.0
+Tyreek Hill,WR,16.7
+Cooper Kupp,WR,17.1
+Stefon Diggs,WR,16.2
+Davante Adams,WR,15.9
+Ja'Marr Chase,WR,15.4
+CeeDee Lamb,WR,14.8
+A.J. Brown,WR,15.7
+Amon-Ra St. Brown,WR,15.3
+Garrett Wilson,WR,14.6
+Chris Olave,WR,14.2
+DK Metcalf,WR,13.8
+Deebo Samuel,WR,13.5
+Mike Evans,WR,13.9
+Keenan Allen,WR,14.7
+Jaylen Waddle,WR,14.4
+Terry McLaurin,WR,13.6
+Amari Cooper,WR,13.7
+DeAndre Hopkins,WR,13.2
+Tyler Lockett,WR,13.3
+Christian Kirk,WR,12.9
+Drake London,WR,12.7
+George Pickens,WR,12.5
+Brandon Aiyuk,WR,13.4
+Courtland Sutton,WR,12.6
+Jerry Jeudy,WR,12.3
+DJ Moore,WR,13.1
+Michael Pittman,WR,13.0
+Calvin Ridley,WR,13.2
+Zay Flowers,WR,12.4
+Jordan Addison,WR,12.8
+Jaxon Smith-Njigba,WR,11.9
+Christian Watson,WR,12.6
+Romeo Doubs,WR,11.8
+Elijah Moore,WR,11.5
+Rashod Bateman,WR,11.2
+Kadarius Toney,WR,11.0
+Quentin Johnston,WR,11.4
+Skyy Moore,WR,10.9
+Darnell Mooney,WR,11.3
+Travis Kelce,TE,14.2
+Mark Andrews,TE,13.1
+T.J. Hockenson,TE,11.9
+George Kittle,TE,12.4
+Dallas Goedert,TE,11.3
+Darren Waller,TE,10.7
+Kyle Pitts,TE,10.5
+Evan Engram,TE,10.9
+Pat Freiermuth,TE,9.8
+David Njoku,TE,10.2
+Dalton Kincaid,TE,10.1
+Sam LaPorta,TE,10.6
+Tyler Higbee,TE,9.7
+Gerald Everett,TE,9.4
+Cole Kmet,TE,9.6
+Justin Tucker,K,9.5
+Harrison Butker,K,8.7
+Evan McPherson,K,8.9
+Tyler Bass,K,8.3
+Daniel Carlson,K,8.6
+Younghoe Koo,K,8.1
+Jason Myers,K,8.0
+Matt Gay,K,8.2
+Brandon McManus,K,7.9
+Greg Zuerlein,K,7.8
+49ers,DEF,12.8
+Cowboys,DEF,11.6
+Eagles,DEF,11.2
+Bills,DEF,10.7
+Patriots,DEF,10.9
+Jets,DEF,10.5
+Ravens,DEF,10.3
+Steelers,DEF,9.8
+Chiefs,DEF,9.6
+Browns,DEF,9.9
+Dolphins,DEF,9.4
+Lions,DEF,9.2
+Seahawks,DEF,9.1
+Chargers,DEF,8.9
+Packers,DEF,9.0

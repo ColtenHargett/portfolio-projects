@@ -1,0 +1,21 @@
+Algorithm: add(newContact)
+
+1. Create a new Node containing newContact.
+
+2. If the list is empty (head is null):
+      set head to the new node
+      stop
+
+3. If newContact should come before the head’s data alphabetically:
+      set new node.next to head
+      set head to new node
+      stop
+
+4. Set current to head.
+
+5. While current.next is not null AND newContact should come after current.next.data alphabetically:
+         move current to current.next
+
+6. Insert the new node:
+      set new node.next to current.next
+      set current.next to new node
