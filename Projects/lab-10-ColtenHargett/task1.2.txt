@@ -1,11 +1,0 @@
-Script started on 2026-04-16 23:45:21-04:00 [TERM="xterm-256color" TTY="/dev/pts/21" COLUMNS="114" LINES="35"]
-[?2004hchargett@moria:~/lab-10-ColtenHargett$ [7msed 's/Zeus/Colten/g' myth.txt[27msed 's/Zeus/Colten/g' myth.txt
-[?2004lColten, the mighty ruler of Mount Olympus, commands the heavens with thunderous might. 
-As the ruler of gods and humans, Colten presides over the celestial domain, casting a gaze upon the mortal realm. Ancient as time, Colten wields the lightning bolt, a symbol of unrivaled power. 
-Colten's eagle soars high, a loyal companion in the vast expanse of the sky. Colten, the name that echoes through eternity, embodies both awe and reverence. 
-
-Source: Conversation with Bing, 4/10/2024
-[?2004hchargett@moria:~/lab-10-ColtenHargett$ [7mexit[27mexit
-[?2004lexit
-
-Script done on 2026-04-16 23:45:37-04:00 [COMMAND_EXIT_CODE="0"]

@@ -1,16 +1,0 @@
-Script started on 2026-01-29 00:17:59-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="116" LINES="28"]
-[?2004hchargett@moria:~/lab-1-ColtenHargett$ pwd
-[?2004l/home/chargett/lab-1-ColtenHargett
-[?2004hchargett@moria:~/lab-1-ColtenHargett$ who
-[?2004lchargett pts/0        2026-01-28 23:50 (10.233.154.219)
-binkley  pts/5        2026-01-28 21:54 (73.201.206.165 via mosh [237503])
-[?2004hchargett@moria:~/lab-1-ColtenHargett$ eco [Kh "Hello world!"
-[?2004lCommand 'ecoh' not found, did you mean:
-  command 'echo' from deb coreutils (9.4-3ubuntu6.1)
-Try: apt install <deb name>
-[?2004hchargett@moria:~/lab-1-ColtenHargett$ ecog[Kh[K[Kgo[K[Kho h[K"hello[K[K[K[K[KHello world@[K1[K!"
-[?2004lHello world!
-[?2004hchargett@moria:~/lab-1-ColtenHargett$ exit
-[?2004lexit
-
-Script done on 2026-01-29 00:18:48-05:00 [COMMAND_EXIT_CODE="0"]

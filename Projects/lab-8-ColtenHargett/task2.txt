@@ -1,38 +1,0 @@
-Script started on 2026-03-26 22:44:51-04:00 [TERM="xterm-256color" TTY="/dev/pts/21" COLUMNS="124" LINES="38"]
-[?2004hchargett@moria:~/lab-8-ColtenHargett$ [7mgrep "ERROR" logfile.txt[27mgrep "ERROR" logfile.txt
-[?2004lERROR: Database connection failed! Retrying...
-ERROR: Printer not found. Again. Typical.
-ERROR: Server overload due to excessive GIF usage.
-ERROR: Unexpected existential crisis encountered.
-ERROR: Firewall detected unauthorized attempt to access "Memes.zip".
-ERROR: Critical failure! Too many browser tabs open.
-ERROR: Network failure. Suggest unplugging and re-plugging everything.
-ERROR: Backup failed. Hope you didn’t need that.
-ERROR: Internal error: Programmer ran out of coffee.
-ERROR: Data corruption detected. Blame it on Mercury retrograde.
-ERROR: Unable to process request. Too many "Are you sure?" popups.
-ERROR: System encountered a "divide by zero" error. Oops.
-ERROR: Unexpected surge in CPU usage. Suspected cause: Spite.
-ERROR: Unexpected bug encountered. Developer now crying.
-ERROR: Blue screen of death. But make it aesthetic.
-ERROR: Keyboard not found. Press any key to continue.
-[?2004hchargett@moria:~/lab-8-ColtenHargett$ [7mgrep -i "warning" logfile.txt[27mgrep -i "warning" logfile.txt
-[?2004lWARNING: Disk space low on drive Z: Only 2GB remaining.
-WARNING: Unusually high number of cat videos detected in work folders.
-WARNING: Your password is expiring soon. Change it to something equally forgettable.
-WARNING: User attempted to rename system file "important.txt" to "whoops.txt".
-WARNING: Detected excessive optimism. Adjusting expectations...
-WARNING: This might take a while. Make a sandwich.
-WARNING: Running out of puns. Critical situation!
-WARNING: Unexpected level of enthusiasm detected in Monday morning meeting.
-WARNING: Low memory detected. Consider closing one of the 97 open tabs.
-WARNING: System clock is suspiciously behind. Travel through time suspected.
-WARNING: High levels of nonsense detected in logs.
-WARNING: Detected extreme procrastination levels.
-WARNING: "Temporary" files now 3 years old.
-[?2004hchargett@moria:~/lab-8-ColtenHargett$ [7mgrep -iv "success" logfile.txt | wc -l[27mgrep -iv "success" logfile.txt | wc -l
-[?2004l61
-[?2004hchargett@moria:~/lab-8-ColtenHargett$ exit
-[?2004lexit
-
-Script done on 2026-03-26 22:45:38-04:00 [COMMAND_EXIT_CODE="0"]

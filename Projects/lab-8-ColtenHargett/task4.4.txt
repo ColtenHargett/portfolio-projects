@@ -1,16 +1,0 @@
-Script started on 2026-03-26 22:51:26-04:00 [TERM="xterm-256color" TTY="/dev/pts/21" COLUMNS="124" LINES="38"]
-[?2004hchargett@moria:~/lab-8-ColtenHargett$ [7mcat global.txt | tr ' ' '\n' | tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr | head -10[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat global.txt | tr ' ' '\n' | tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr | head -10
-[?2004l     20 the
-     10 and
-      9 global
-      8 of
-      7 warming
-      6 to
-      6 is
-      4 that
-      4 a
-      3 other
-[?2004hchargett@moria:~/lab-8-ColtenHargett$ exit
-[?2004lexit
-
-Script done on 2026-03-26 22:51:38-04:00 [COMMAND_EXIT_CODE="0"]

@@ -1,9 +1,0 @@
-Script started on 2026-04-16 23:32:07-04:00 [TERM="xterm-256color" TTY="/dev/pts/21" COLUMNS="114" LINES="35"]
-[?2004hchargett@moria:~/lab-10-ColtenHargett$ [7msed '/^#/d' hello.sh[27msed '/^#/d' hello.sh
-[?2004lecho "Hello, world!" # This comment is inline with code
-echo "This is a test script."
-echo "Bahahahaha!" # End of script comment
-[?2004hchargett@moria:~/lab-10-ColtenHargett$ [7mexit[27mexit
-[?2004lexit
-
-Script done on 2026-04-16 23:32:22-04:00 [COMMAND_EXIT_CODE="0"]

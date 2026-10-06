@@ -1,2 +1,0 @@
-The file windows.sh was created on a Windows machine, so it used CRLF end-of-line characters. Linux shell scripts
-use LF line endings, so the file would not run. I fixed it by using tr -d '\r' to remove the characters.

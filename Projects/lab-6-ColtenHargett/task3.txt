@@ -1,25 +1,0 @@
-Script started on 2026-03-12 11:16:37-04:00 [TERM="xterm-256color" TTY="/dev/pts/19" COLUMNS="106" LINES="34"]
-[?2004hchargett@moria:~/lab-6-ColtenHargett$ git pushcommit -m "Add reflection.txt"push[K[Kvim task[K[K[K[K[K[K[K[K./task3.sh 
-[?2004lCurrent Fruits:
-apple banana cherry
-Next fruit? Dragon Fruit
-
-Current Fruits:
-apple banana cherry Dragon Fruit
-Next fruit? Star Fruit
-
-Current Fruits:
-apple banana cherry Dragon Fruit Star Fruit
-Next fruit? Passion Fruit
-
-All Fruits:
-apple
-banana
-cherry
-Dragon Fruit
-Star Fruit
-Passion Fruit
-[?2004hchargett@moria:~/lab-6-ColtenHargett$ exit
-[?2004lexit
-
-Script done on 2026-03-12 11:17:28-04:00 [COMMAND_EXIT_CODE="0"]

@@ -1,8 +1,0 @@
-The task I found the most interesting was task 2.2 because it seemed like the most useful by creating new 
-data by calculating the profit for each movie. That made it more practical because I could use it in a real 
-situation. I do think awk could be useful outside of this class. If I had a large CSV file or log file and needed 
-to quickly clean it up or calculate something, awk would be a really fast and easy way to do it. I did recognize 
-task 2.2 as being similar to a 151 lab because it involved taking movie data and processing it, even though the 
-language and format were different. I think it is kind of crazy that all of that can be done in one line. At first 
-it looks confusing, but once you understand the pattern its not so bad. It is interesting how much awk can do 
-with such a short command, even though there is a bit of a learnig curve.

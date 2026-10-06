@@ -1,15 +1,0 @@
-Script started on 2026-04-16 23:47:19-04:00 [TERM="xterm-256color" TTY="/dev/pts/21" COLUMNS="114" LINES="35"]
-[?2004hchargett@moria:~/lab-10-ColtenHargett$ [7msed '/^[[:space:]]*$/d' weather.xml[27msed '/^[[:space:]]*$/d' weather.xml
-[?2004l<?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-stylesheet href="latest_ob.xsl" type="text/xsl"?>
-<credit>NOAA's National Weather Service </credit>
-<credit_URL>https://weather.gov/ </credit_URL>
-<location>Baltimore, Baltimore-Washington International Airport, MD</location>
-<station_id>KBWI</station_id>
-<observation_time>Last Updated on Mar 17 2023, 1:54 pm EDT</observation_time>
-<weather>Overcast</weather>
-<temperature_string>59.0 F (15.0 C)</temperature_string>
-[?2004hchargett@moria:~/lab-10-ColtenHargett$ [7mexit[27mexit
-[?2004lexit
-
-Script done on 2026-04-16 23:47:29-04:00 [COMMAND_EXIT_CODE="0"]
